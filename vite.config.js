@@ -19,8 +19,8 @@ export default defineConfig({
       base,
       includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg'],
       manifest: {
-        name: 'Love Letters Trail',
-        short_name: 'LLTrail',
+        name: 'Anouk & Ruud',
+        short_name: 'Anouk & Ruud',
         description: 'Een GPS-puzzeltocht voor een bijzonder stel',
         theme_color: '#1a1209',
         background_color: '#1a1209',

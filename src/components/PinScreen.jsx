@@ -32,7 +32,7 @@ export default function PinScreen({ onSuccess }) {
     <div className="screen pin-screen">
       <div className="pin-header">
         <div className="compass-icon">🗝️</div>
-        <h1>Love Letters Trail</h1>
+        <h1>Anouk & Ruud</h1>
         <p>Voer de PIN-code in (het jaar dat het allemaal begon)</p>
       </div>
 
