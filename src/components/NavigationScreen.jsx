@@ -88,17 +88,7 @@ export default function NavigationScreen({ stopIndex, onArrived }) {
       )}
 
       {DEBUG_MODE && (
-        <>
-          <div className="debug-badge">📍 aankomstradius: {stop.arrivalRadius} m</div>
-          <a
-            className="debug-maps-link"
-            href={`https://maps.google.com/?q=${stop.lat},${stop.lng}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            🗺 Open in Google Maps
-          </a>
-        </>
+        <div className="debug-badge">📍 aankomstradius: {stop.arrivalRadius} m</div>
       )}
     </div>
   );

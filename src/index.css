@@ -506,20 +506,31 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 .debug-maps-link,
 .debug-badge,
 .skip-btn,
-.debug-build {
+.debug-footer {
   outline: 2px dashed red;
   outline-offset: 3px;
 }
 
-.debug-build {
+.debug-footer {
   position: fixed;
   bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.debug-footer .debug-maps-link {
+  outline: none;
+  pointer-events: auto;
+}
+
+.debug-build {
   color: #ff6b35;
   font-size: 0.7rem;
   opacity: 0.6;
-  pointer-events: none;
   white-space: nowrap;
 }
 

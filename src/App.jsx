@@ -11,7 +11,7 @@ import RefreshButton from "./components/RefreshButton";
 import ResetButton from "./components/ResetButton";
 import SkipButton from "./components/SkipButton";
 import TipsButton from "./components/TipsButton";
-import { STOPS, DEBUG_MODE } from "./config/trail";
+import { STOPS, DEBUG_MODE, FINAL } from "./config/trail";
 
 export default function App() {
   useWakeLock();
@@ -87,7 +87,30 @@ export default function App() {
       )}
       {content}
       {DEBUG_MODE && (
-        <div className="debug-build">build {__BUILD_TIME__}</div>
+        <div className="debug-footer">
+          {screen === "navigate" && validStop ? (
+            <a
+              className="debug-maps-link"
+              href={`https://maps.google.com/?q=${STOPS[currentStopIndex].lat},${STOPS[currentStopIndex].lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🗺 Google Maps
+            </a>
+          ) : screen === "final" ? (
+            <a
+              className="debug-maps-link"
+              href={`https://maps.google.com/?q=${FINAL.lat},${FINAL.lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              🗺 Google Maps
+            </a>
+          ) : (
+            <span />
+          )}
+          <span className="debug-build">build {__BUILD_TIME__}</span>
+        </div>
       )}
     </>
   );
