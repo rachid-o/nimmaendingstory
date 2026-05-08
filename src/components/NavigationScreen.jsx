@@ -13,7 +13,7 @@ function shortestPath(from, to) {
 export default function NavigationScreen({ stopIndex, onArrived }) {
   const stop = STOPS[stopIndex];
   const { position, error: gpsError } = useGeolocation();
-  const { heading, permissionNeeded, requestPermission } = useCompass();
+  const { heading, permissionNeeded, requestPermission, compassAvailable } = useCompass();
   const prevRotationRef = useRef(null);
 
   const distance = position
@@ -80,6 +80,12 @@ export default function NavigationScreen({ stopIndex, onArrived }) {
       <p className="nav-hint">
         Houd je telefoon horizontaal voor het beste kompas-resultaat.
       </p>
+
+      {compassAvailable === false && (
+        <p className="nav-hint" style={{ color: "#e07b39" }}>
+          Kompas niet beschikbaar op dit apparaat — gebruik de afstandsindicator als leidraad.
+        </p>
+      )}
 
       {DEBUG_MODE && (
         <>
