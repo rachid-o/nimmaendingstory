@@ -86,6 +86,9 @@ export default function App() {
         />
       )}
       {content}
+      {DEBUG_MODE && (
+        <div className="debug-build">build {__BUILD_TIME__}</div>
+      )}
     </>
   );
 }

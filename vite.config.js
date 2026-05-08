@@ -7,6 +7,9 @@ const base = process.env.GITHUB_ACTIONS ? '/loveletterstrail/' : '/'
 
 export default defineConfig({
   base,
+  define: {
+    __BUILD_TIME__: JSON.stringify(new Date().toISOString()),
+  },
   test: {
     environment: 'jsdom',
     globals: true,
