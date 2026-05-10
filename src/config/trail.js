@@ -43,7 +43,21 @@ export const STOPS = [
       hints: ["Het antwoord is een getal."],
     },
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
-  },  
+  },
+  {
+    id: 3,
+    name: "Erasmusgebouw",
+    lat: 51.819329,
+    lng: 5.865646,
+    arrivalRadius: 30,
+    puzzle: {
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
+    },
+    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+  },
   {
     id: 5,
     name: "LUX",
