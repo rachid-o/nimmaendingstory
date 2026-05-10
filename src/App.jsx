@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useWakeLock } from "./hooks/useWakeLock";
 import { useProgress } from "./hooks/useProgress";
 import PinScreen from "./components/PinScreen";
@@ -11,11 +11,14 @@ import RefreshButton from "./components/RefreshButton";
 import ResetButton from "./components/ResetButton";
 import SkipButton from "./components/SkipButton";
 import TipsButton from "./components/TipsButton";
+import TestButton from "./components/TestButton";
+import TestScreen from "./components/TestScreen";
 import { STOPS, DEBUG_MODE, FINAL } from "./config/trail";
 
 export default function App() {
   useWakeLock();
   const { progress, update } = useProgress();
+  const [showTest, setShowTest] = useState(false);
   const { screen, currentStopIndex, finalArrived } = progress;
 
   const handlePinSuccess = useCallback(() => {
@@ -75,6 +78,16 @@ export default function App() {
 
   const showSkip = DEBUG_MODE && (screen === "navigate" || screen === "final");
 
+  function handleTestSelectStop(index) {
+    update({ currentStopIndex: index, screen: "navigate" });
+    setShowTest(false);
+  }
+
+  function handleTestSelectFinal() {
+    update({ screen: "final" });
+    setShowTest(false);
+  }
+
   return (
     <>
       <RefreshButton />
@@ -83,6 +96,14 @@ export default function App() {
       {showSkip && (
         <SkipButton
           onSkip={screen === "navigate" ? handleNextStop : handleFinalArrived}
+        />
+      )}
+      {DEBUG_MODE && <TestButton onClick={() => setShowTest(true)} />}
+      {showTest && (
+        <TestScreen
+          onSelectStop={handleTestSelectStop}
+          onSelectFinal={handleTestSelectFinal}
+          onClose={() => setShowTest(false)}
         />
       )}
       {content}
