@@ -88,7 +88,7 @@ export default function NavigationScreen({ stopIndex, onArrived }) {
       )}
 
       {DEBUG_MODE && (
-        <div className="debug-badge">📍 aankomstradius: {stop.arrivalRadius} m</div>
+        <div className="debug-badge">{stop.name} · aankomstradius: {stop.arrivalRadius} m</div>
       )}
     </div>
   );
