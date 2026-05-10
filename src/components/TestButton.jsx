@@ -6,7 +6,7 @@ export default function TestButton({ onClick }) {
       title="Testpagina"
       aria-label="Testpagina"
     >
-      T
+      Test
     </button>
   );
 }
