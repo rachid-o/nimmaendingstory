@@ -4,7 +4,7 @@
 
 export const DEBUG_MODE = true; // ← zet op false vóór je deployt
 
-export const PIN = "2005"; // PIN-code om de app te openen
+export const PIN = "2006"; // PIN-code om de app te openen
 
 export const WELCOME = {
   title: "20 Jaar Samen! 🗺️",
