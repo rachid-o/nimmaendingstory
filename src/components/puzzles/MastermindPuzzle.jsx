@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-const MAX_ATTEMPTS = 10;
-
 function scoreGuess(guess, code) {
   let bulls = 0;
   const guessRem = [];
@@ -22,13 +20,12 @@ export default function MastermindPuzzle({ puzzle, onSolved }) {
   const [guess, setGuess] = useState(Array(slots).fill(null));
   const [activeSlot, setActiveSlot] = useState(0);
   const [history, setHistory] = useState([]);
-  const [gameOver, setGameOver] = useState(null);
+  const [won, setWon] = useState(false);
 
   const allFilled = guess.every(v => v !== null);
-  const attemptsLeft = MAX_ATTEMPTS - history.length;
 
   function handleOptionClick(optIdx) {
-    if (gameOver) return;
+    if (won) return;
     const next = [...guess];
     next[activeSlot] = optIdx;
     setGuess(next);
@@ -36,30 +33,27 @@ export default function MastermindPuzzle({ puzzle, onSolved }) {
   }
 
   function handleSlotClick(i) {
-    if (gameOver) return;
+    if (won) return;
     setActiveSlot(i);
   }
 
   function handleClear() {
-    if (gameOver) return;
+    if (won) return;
     const next = [...guess];
     next[activeSlot] = null;
     setGuess(next);
   }
 
   function handleSubmit() {
-    if (!allFilled || gameOver) return;
+    if (!allFilled || won) return;
     const { bulls, cows } = scoreGuess(guess, code);
-    const newHistory = [{ guess: [...guess], bulls, cows }, ...history];
-    setHistory(newHistory);
+    setHistory(prev => [{ guess: [...guess], bulls, cows }, ...prev]);
     setGuess(Array(slots).fill(null));
     setActiveSlot(0);
 
     if (bulls === slots) {
-      setGameOver("won");
+      setWon(true);
       setTimeout(onSolved, 1000);
-    } else if (newHistory.length >= MAX_ATTEMPTS) {
-      setGameOver("lost");
     }
   }
 
@@ -79,18 +73,18 @@ export default function MastermindPuzzle({ puzzle, onSolved }) {
         ))}
       </div>
 
-      {!gameOver && (
+      {!won && (
         <>
           <div className="mm-palette">
-            {options.map((emoji, i) => (
+            {options.map((label, i) => (
               <button
                 key={i}
                 type="button"
                 className="mm-option-btn"
                 onClick={() => handleOptionClick(i)}
-                aria-label={emoji}
+                aria-label={label}
               >
-                {emoji}
+                {label}
               </button>
             ))}
           </div>
@@ -113,33 +107,13 @@ export default function MastermindPuzzle({ puzzle, onSolved }) {
               Controleer →
             </button>
           </div>
-
-          <p className="mm-attempts-left">
-            {history.length === 0
-              ? `${MAX_ATTEMPTS} pogingen beschikbaar`
-              : `${attemptsLeft} ${attemptsLeft === 1 ? "poging" : "pogingen"} over`}
-          </p>
         </>
       )}
 
-      {gameOver === "won" && (
+      {won && (
         <div className="mm-game-over">
           <span className="mm-game-over-icon">🎉</span>
           <p>De code is gekraakt!</p>
-        </div>
-      )}
-
-      {gameOver === "lost" && (
-        <div className="mm-game-over">
-          <p>Helaas — de geheime code was:</p>
-          <div className="mm-solution">
-            {code.map((v, i) => (
-              <span key={i} className="mm-solution-item">{options[v]}</span>
-            ))}
-          </div>
-          <button type="button" className="btn-primary" onClick={onSolved}>
-            Doorgaan →
-          </button>
         </div>
       )}
 

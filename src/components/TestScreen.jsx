@@ -18,8 +18,8 @@ const TEST_PUZZLES = [
       type: "photo-answer",
       question: "Wat staat er op elke foto? (antwoorden: natuur / stad)",
       photos: [
-        { url: "https://picsum.photos/400/300?random=1", answer: "natuur" },
-        { url: "https://picsum.photos/400/300?random=2", answer: "stad" },
+        { url: "https://picsum.photos/id/15/400/300", answer: "natuur" },
+        { url: "https://picsum.photos/id/42/400/300", answer: "stad" },
       ],
       hints: [],
     },
@@ -30,9 +30,9 @@ const TEST_PUZZLES = [
       type: "photo-order",
       question: "Zet de foto's op chronologische volgorde",
       photos: [
-        { label: "1", url: "https://picsum.photos/400/300?random=3" },
-        { label: "2", url: "https://picsum.photos/400/300?random=4" },
-        { label: "3", url: "https://picsum.photos/400/300?random=5" },
+        { label: "1", url: "https://picsum.photos/id/10/400/300" },
+        { label: "2", url: "https://picsum.photos/id/20/400/300" },
+        { label: "3", url: "https://picsum.photos/id/30/400/300" },
       ],
       answer: "312",
       hints: [],

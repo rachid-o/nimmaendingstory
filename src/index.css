@@ -593,6 +593,26 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 
 .final-hearts { font-size: 2rem; letter-spacing: clamp(4px, 2vw, 10px); }
 
+/* ── Hint overlay ───────────────────────────────────────────── */
+.hint-overlay-dialog {
+  max-width: min(100%, 440px);
+  text-align: left;
+  gap: 14px;
+}
+.hint-overlay-title {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+.hint-overlay-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
 /* ── Shared puzzle interactive wrapper ─────────────────────── */
 .puzzle-interactive {
   width: 100%;

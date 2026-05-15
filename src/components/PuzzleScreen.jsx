@@ -13,8 +13,6 @@ const TYPE_ICON = {
   "photo-order": "🔢",
 };
 
-const INTERACTIVE_TYPES = ["mastermind", "photo-answer", "photo-order"];
-
 export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose }) {
   const isPreview = !!overridePuzzle;
   const puzzle = overridePuzzle ?? STOPS[stopIndex].puzzle;
@@ -23,6 +21,12 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
   const [input, setInput] = useState("");
   const [feedback, setFeedback] = useState(null);
   const [hintsShown, setHintsShown] = useState(0);
+  const [showHintOverlay, setShowHintOverlay] = useState(false);
+
+  function handleHintOpen() {
+    if (hintsShown === 0) setHintsShown(1);
+    setShowHintOverlay(true);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -36,8 +40,6 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
       setTimeout(() => setFeedback(null), 1500);
     }
   }
-
-  const isInteractive = INTERACTIVE_TYPES.includes(puzzle.type);
 
   return (
     <div className="screen puzzle-screen">
@@ -57,19 +59,35 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
         <p className="puzzle-question">{puzzle.question}</p>
       </div>
 
-      <div className="hints-area">
-        {hints.slice(0, hintsShown).map((text, i) => (
-          <div className="hint-box" key={i}>
-            <span className="hint-label">💡 Hint {hints.length > 1 ? i + 1 : ""}</span>
-            <p>{text}</p>
+      {hints.length > 0 && (
+        <button className="btn-hint" onClick={handleHintOpen}>
+          💡 {hintsShown === 0 ? "Hint tonen" : "Hints bekijken"}
+        </button>
+      )}
+
+      {showHintOverlay && (
+        <div className="confirm-overlay" onClick={() => setShowHintOverlay(false)}>
+          <div className="confirm-dialog hint-overlay-dialog" onClick={e => e.stopPropagation()}>
+            <p className="hint-overlay-title">💡 {hints.length > 1 ? "Hints" : "Hint"}</p>
+            <div className="hint-overlay-list">
+              {hints.slice(0, hintsShown).map((text, i) => (
+                <div className="hint-box" key={i}>
+                  {hints.length > 1 && <span className="hint-label">Hint {i + 1}</span>}
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+            {hintsShown < hints.length && (
+              <button className="btn-hint" onClick={() => setHintsShown(n => n + 1)}>
+                💡 Volgende hint
+              </button>
+            )}
+            <button className="btn-secondary" onClick={() => setShowHintOverlay(false)}>
+              Sluiten
+            </button>
           </div>
-        ))}
-        {hintsShown < hints.length && (
-          <button className="btn-hint" onClick={() => setHintsShown(n => n + 1)}>
-            {hintsShown === 0 ? "💡 Hint tonen" : "💡 Nog een hint"}
-          </button>
-        )}
-      </div>
+        </div>
+      )}
 
       {puzzle.type === "mastermind" ? (
         <MastermindPuzzle puzzle={puzzle} onSolved={onSolved} />
