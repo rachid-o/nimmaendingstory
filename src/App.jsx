@@ -19,6 +19,7 @@ export default function App() {
   useWakeLock();
   const { progress, update } = useProgress();
   const [showTest, setShowTest] = useState(false);
+  const [previewPuzzle, setPreviewPuzzle] = useState(null);
   const { screen, currentStopIndex, finalArrived } = progress;
 
   const handlePinSuccess = useCallback(() => {
@@ -76,6 +77,14 @@ export default function App() {
   else if (screen === "final")
     content = <FinalScreen arrived={!!finalArrived} onArrived={handleFinalArrived} />;
 
+  const mainContent = previewPuzzle ? (
+    <PuzzleScreen
+      overridePuzzle={previewPuzzle}
+      onSolved={() => setPreviewPuzzle(null)}
+      onClose={() => setPreviewPuzzle(null)}
+    />
+  ) : content;
+
   const showSkip = DEBUG_MODE && (screen === "navigate" || screen === "final");
 
   function handleTestSelectStop(index) {
@@ -104,9 +113,10 @@ export default function App() {
           onSelectStop={handleTestSelectStop}
           onSelectFinal={handleTestSelectFinal}
           onClose={() => setShowTest(false)}
+          onPreviewPuzzle={(puzzle) => { setPreviewPuzzle(puzzle); setShowTest(false); }}
         />
       )}
-      {content}
+      {mainContent}
       {DEBUG_MODE && (
         <div className="debug-footer">
           {screen === "navigate" && validStop ? (

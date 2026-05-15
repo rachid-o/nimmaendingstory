@@ -1,6 +1,46 @@
 import { STOPS, FINAL } from "../config/trail";
 
-export default function TestScreen({ onSelectStop, onSelectFinal, onClose }) {
+const TEST_PUZZLES = [
+  {
+    label: "🎯 Mastermind",
+    puzzle: {
+      type: "mastermind",
+      question: "Raad de geheime combinatie!",
+      code: [0, 2, 1, 3],
+      options: ["🌹", "💐", "🌻", "🌺", "🌸", "🍀"],
+      slots: 4,
+      hints: ["De eerste bloem is een roos."],
+    },
+  },
+  {
+    label: "📷 Foto-antwoord",
+    puzzle: {
+      type: "photo-answer",
+      question: "Wat staat er op elke foto? (antwoorden: natuur / stad)",
+      photos: [
+        { url: "https://picsum.photos/400/300?random=1", answer: "natuur" },
+        { url: "https://picsum.photos/400/300?random=2", answer: "stad" },
+      ],
+      hints: [],
+    },
+  },
+  {
+    label: "🔢 Foto-volgorde",
+    puzzle: {
+      type: "photo-order",
+      question: "Zet de foto's op chronologische volgorde",
+      photos: [
+        { label: "1", url: "https://picsum.photos/400/300?random=3" },
+        { label: "2", url: "https://picsum.photos/400/300?random=4" },
+        { label: "3", url: "https://picsum.photos/400/300?random=5" },
+      ],
+      answer: "312",
+      hints: [],
+    },
+  },
+];
+
+export default function TestScreen({ onSelectStop, onSelectFinal, onClose, onPreviewPuzzle }) {
   return (
     <div className="confirm-overlay" onClick={onClose}>
       <div className="confirm-dialog test-screen-dialog" onClick={(e) => e.stopPropagation()}>
@@ -24,6 +64,25 @@ export default function TestScreen({ onSelectStop, onSelectFinal, onClose }) {
             </button>
           </li>
         </ul>
+
+        {onPreviewPuzzle && (
+          <div className="test-puzzle-section">
+            <h4>Nieuwe puzzeltypen testen</h4>
+            <ul className="test-stop-list">
+              {TEST_PUZZLES.map((item, i) => (
+                <li key={i}>
+                  <button
+                    className="test-puzzle-btn"
+                    onClick={() => onPreviewPuzzle(item.puzzle)}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <button className="btn-secondary" onClick={onClose}>Sluiten</button>
       </div>
     </div>
