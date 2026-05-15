@@ -6,10 +6,10 @@ const TEST_PUZZLES = [
     puzzle: {
       type: "mastermind",
       question: "Raad de geheime combinatie!",
-      code: [0, 2, 1, 3],
-      options: ["🌹", "💐", "🌻", "🌺", "🌸", "🍀"],
+      code: [0, 1, 2, 3],
+      options: ["A", "B", "C", "D", "E", "F"],
       slots: 4,
-      hints: ["De eerste bloem is een roos."],
+      hints: ["A=1, B=2, C=3, D=4 — het antwoord is ABCD."],
     },
   },
   {
