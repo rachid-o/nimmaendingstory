@@ -48,7 +48,7 @@ export default function TestScreen({ onSelectStop, onSelectFinal, onClose, onPre
         <p className="test-screen-hint">Kies een locatie om naartoe te navigeren</p>
         <ul className="test-stop-list">
           {STOPS.map((stop, index) => (
-            <li key={stop.id}>
+            <li key={index}>
               <button className="test-stop-btn" onClick={() => onSelectStop(index)}>
                 <span className="test-stop-num">{index + 1}</span>
                 <span className="test-stop-name">{stop.name}</span>

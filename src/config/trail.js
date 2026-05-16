@@ -15,7 +15,6 @@ export const WELCOME = {
 
 export const STOPS = [
   {
-    id: 1,
     name: "Tijgerstraat",
     lat: 51.8282174,
     lng: 5.8433054,
@@ -29,12 +28,9 @@ export const STOPS = [
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
   {
-    id: 2,
     name: "Multatuliplaats",
-    lat: 51.8318952, 
+    lat: 51.8318952,
     lng: 5.8576368,
-    // lat: 51.8317455,
-    // lng: 5.8563546,
     arrivalRadius: 30,
     puzzle: {
       type: "text",
@@ -45,7 +41,6 @@ export const STOPS = [
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
   {
-    id: 3,
     name: "Erasmusgebouw",
     lat: 51.819329,
     lng: 5.865646,
@@ -59,7 +54,6 @@ export const STOPS = [
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
   {
-    id: 5,
     name: "LUX",
     lat: 51.8451501,
     lng: 5.867057,
@@ -73,7 +67,6 @@ export const STOPS = [
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
   {
-    id: 6,
     name: "Hertogstraat",
     lat: 51.845777,
     lng: 5.8686818,
@@ -87,7 +80,6 @@ export const STOPS = [
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
   {
-    id: 7,
     name: "Valkhof",
     lat: 51.847563,
     lng: 5.8705543,
@@ -101,24 +93,19 @@ export const STOPS = [
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
   {
-    id: 10,
     name: "Speeltuin Planetenpark",
     lat: 51.838921,
     lng: 5.832842,
     arrivalRadius: 10,
     puzzle: {
       type: "riddle",
-      question:
-        "1 + 1 = ?",
+      question: "1 + 1 = ?",
       answer: "2",
-      hints: [
-        "Gebruik een rekenmachine",
-      ],
+      hints: ["Gebruik een rekenmachine"],
     },
     completeMessage: "Geweldig! Jullie eerste stop zit erop! 🎉",
   },
   {
-    id: 12,
     name: "Bankje Planetenpark",
     lat: 51.840211,
     lng: 5.833155,
@@ -136,7 +123,6 @@ export const STOPS = [
     completeMessage: "Geweldig! Jullie eerste stop zit erop! 🎉",
   },
   {
-    id: 20,
     name: "Midden in Planetenpark",
     lat: 51.838292,
     lng: 5.830611,
@@ -155,7 +141,6 @@ export const STOPS = [
       "Wat een mooie herinnering! Jullie zijn er bijna... ✨",
   },
   {
-    id: 30,
     name: "Zwembad",
     lat: 51.83833033970654,
     lng: 5.82807232626584,
