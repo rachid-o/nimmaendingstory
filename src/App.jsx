@@ -13,17 +13,17 @@ import SkipButton from "./components/SkipButton";
 import TipsButton from "./components/TipsButton";
 import TestButton from "./components/TestButton";
 import TestScreen from "./components/TestScreen";
-import { STOPS, DEBUG_MODE, FINAL } from "./config/trail";
+import { STOPS, FINAL } from "./config/trail";
 
 export default function App() {
   useWakeLock();
   const { progress, update } = useProgress();
   const [showTest, setShowTest] = useState(false);
   const [previewPuzzle, setPreviewPuzzle] = useState(null);
-  const { screen, currentStopIndex, finalArrived } = progress;
+  const { screen, currentStopIndex, finalArrived, debugMode } = progress;
 
-  const handlePinSuccess = useCallback(() => {
-    update({ pinVerified: true, screen: "welcome" });
+  const handlePinSuccess = useCallback((isDebug) => {
+    update({ pinVerified: true, screen: "welcome", debugMode: !!isDebug });
   }, [update]);
 
   const handleStart = useCallback(() => {
@@ -64,7 +64,7 @@ export default function App() {
   if (screen === "pin") content = <PinScreen onSuccess={handlePinSuccess} />;
   else if (screen === "welcome") content = <WelcomeScreen onStart={handleStart} />;
   else if (screen === "navigate" && validStop)
-    content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} />;
+    content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} debugMode={debugMode} />;
   else if (screen === "puzzle" && validStop)
     content = (
       <PuzzleScreen
@@ -85,7 +85,7 @@ export default function App() {
     />
   ) : content;
 
-  const showSkip = DEBUG_MODE && (screen === "navigate" || screen === "final");
+  const showSkip = debugMode && (screen === "navigate" || screen === "final");
 
   function handleTestSelectStop(index) {
     update({ currentStopIndex: index, screen: "navigate" });
@@ -107,7 +107,7 @@ export default function App() {
           onSkip={screen === "navigate" ? handleNextStop : handleFinalArrived}
         />
       )}
-      {DEBUG_MODE && <TestButton onClick={() => setShowTest(true)} />}
+      {debugMode && <TestButton onClick={() => setShowTest(true)} />}
       {showTest && (
         <TestScreen
           onSelectStop={handleTestSelectStop}
@@ -117,7 +117,7 @@ export default function App() {
         />
       )}
       {mainContent}
-      {DEBUG_MODE && (
+      {debugMode && (
         <div className="debug-footer">
           {screen === "navigate" && validStop ? (
             <a

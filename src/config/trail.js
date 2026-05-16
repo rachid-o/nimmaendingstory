@@ -2,9 +2,10 @@
 //  CONFIGURATIE — pas hier alles aan voor jullie tocht
 // ============================================================
 
-export const DEBUG_MODE = true; // ← zet op false vóór je deployt
+export const DEBUG_MODE = false;
 
-export const PIN = "2006"; // PIN-code om de app te openen
+export const PIN = "2006";
+export const DEBUG_PIN = "12369874";
 
 export const WELCOME = {
   title: "20 Jaar Samen! 🗺️",

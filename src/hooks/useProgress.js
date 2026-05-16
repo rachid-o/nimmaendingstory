@@ -24,9 +24,10 @@ export function useProgress() {
         pinVerified: false,
         welcomeSeen: false,
         currentStopIndex: 0,
-        screen: "pin", // pin | welcome | navigate | puzzle | stopComplete | final | finalArrived
+        screen: "pin",
         wrongAttempts: {},
         finished: false,
+        debugMode: false,
       }
     );
   });
@@ -48,6 +49,7 @@ export function useProgress() {
       screen: "pin",
       wrongAttempts: {},
       finished: false,
+      debugMode: false,
     });
   }, []);
 

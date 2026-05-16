@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PIN } from "../config/trail";
+import { PIN, DEBUG_PIN } from "../config/trail";
 
 export default function PinScreen({ onSuccess }) {
   const [input, setInput] = useState("");
@@ -7,11 +7,14 @@ export default function PinScreen({ onSuccess }) {
 
   function handleDigit(d) {
     const next = input + d;
-    if (next.length < PIN.length) {
+    if (next.length < DEBUG_PIN.length) {
       setInput(next);
-    } else if (next.length === PIN.length) {
-      if (next === PIN) {
-        onSuccess();
+      if (next.length === PIN.length && next === PIN) {
+        onSuccess(false);
+      }
+    } else if (next.length === DEBUG_PIN.length) {
+      if (next === DEBUG_PIN) {
+        onSuccess(true);
       } else {
         setShake(true);
         setTimeout(() => {

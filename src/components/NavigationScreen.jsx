@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useCompass } from "../hooks/useCompass";
 import { haversineDistance, calculateBearing, formatDistance } from "../utils/geo";
-import { STOPS, DEBUG_MODE } from "../config/trail";
+import { STOPS } from "../config/trail";
 
 // Always rotate the shortest way (avoids spinning 340° instead of 20°)
 function shortestPath(from, to) {
@@ -10,7 +10,7 @@ function shortestPath(from, to) {
   return from + diff;
 }
 
-export default function NavigationScreen({ stopIndex, onArrived }) {
+export default function NavigationScreen({ stopIndex, onArrived, debugMode }) {
   const stop = STOPS[stopIndex];
   const { position, error: gpsError } = useGeolocation();
   const { heading, permissionNeeded, requestPermission, compassAvailable } = useCompass();
@@ -106,7 +106,7 @@ export default function NavigationScreen({ stopIndex, onArrived }) {
         noodcode
       </button>
 
-      {DEBUG_MODE && (
+      {debugMode && (
         <div className="debug-badge">{stop.name} · aankomstradius: {stop.arrivalRadius} m</div>
       )}
 
