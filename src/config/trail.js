@@ -19,6 +19,7 @@ export const STOPS = [
     lat: 51.838921,
     lng: 5.832842,
     arrivalRadius: 10,
+    cheatCode: "k3p7",
     puzzle: {
       type: "riddle",
       question: "1 + 1 = ?",
@@ -49,6 +50,7 @@ export const STOPS = [
     lat: 51.838292,
     lng: 5.830611,
     arrivalRadius: 20,
+    cheatCode: "b9x4",
     puzzle: {
       type: "memory",
       question:
@@ -67,6 +69,7 @@ export const STOPS = [
     lat: 51.8373541,
     lng: 5.8295025,
     arrivalRadius: 20,
+    cheatCode: "z6m2",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -80,6 +83,7 @@ export const STOPS = [
     lat: 51.8383303,
     lng: 5.8280723,
     arrivalRadius: 20,
+    cheatCode: "n4q8",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -93,6 +97,7 @@ export const STOPS = [
     lat: 51.836357039896214,
     lng: 5.824969690886946,
     arrivalRadius: 20,
+    cheatCode: "5wt3",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -106,6 +111,7 @@ export const STOPS = [
     lat: 51.835570,
     lng: 5.823362,
     arrivalRadius: 15,
+    cheatCode: "j7a1",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -119,6 +125,7 @@ export const STOPS = [
     lat: 51.8282174,
     lng: 5.8433054,
     arrivalRadius: 30,
+    cheatCode: "r2e9",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -132,6 +139,7 @@ export const STOPS = [
     lat: 51.8318952,
     lng: 5.8576368,
     arrivalRadius: 30,
+    cheatCode: "c5h6",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -145,6 +153,7 @@ export const STOPS = [
     lat: 51.819329,
     lng: 5.865646,
     arrivalRadius: 30,
+    cheatCode: "8ks4",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -158,6 +167,7 @@ export const STOPS = [
     lat: 51.8451501,
     lng: 5.867057,
     arrivalRadius: 10,
+    cheatCode: "p3n7",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -171,6 +181,7 @@ export const STOPS = [
     lat: 51.845777,
     lng: 5.8686818,
     arrivalRadius: 10,
+    cheatCode: "6fq2",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",
@@ -184,6 +195,7 @@ export const STOPS = [
     lat: 51.847563,
     lng: 5.8705543,
     arrivalRadius: 30,
+    cheatCode: "9mw5",
     puzzle: {
       type: "text",
       question: "Wat is 1 + 1?",

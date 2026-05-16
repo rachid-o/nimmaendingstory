@@ -277,6 +277,19 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 
 .nav-hint { color: var(--text-dim); font-size: 0.9rem; max-width: 90%; }
 
+.cheat-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-family: 'Lato', sans-serif;
+  opacity: 0.45;
+  cursor: pointer;
+  padding: 4px 8px;
+  letter-spacing: 0.05em;
+}
+.cheat-btn:hover { opacity: 0.8; }
+
 .error-text  { color: var(--red);  font-size: 1rem; }
 .loading-text { color: var(--text-dim); font-size: 1rem; }
 
