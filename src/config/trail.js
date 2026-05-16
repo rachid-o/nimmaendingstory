@@ -81,9 +81,9 @@ export const STOPS = [
   },
   {
     name: "Vogeltjes?",
-    lat: 51.8383303,
-    lng: 5.8280723,
-    arrivalRadius: 20,
+    lat: 51.8362545,
+    lng: 5.8245132,
+    arrivalRadius: 10,
     cheatCode: "n4q8",
     puzzle: {
       type: "text",
@@ -122,10 +122,10 @@ export const STOPS = [
     completeMessage: "Steegje Lanteerne! Op naar de volgende stop.",
   },  
   {
-    name: "Tijgerstraat",
-    lat: 51.8282174,
-    lng: 5.8433054,
-    arrivalRadius: 30,
+    name: "Tijgerstraat 89",
+    lat: 51.8280866,
+    lng: 5.8431979,
+    arrivalRadius: 20,
     cheatCode: "r2e9",
     puzzle: {
       type: "text",
