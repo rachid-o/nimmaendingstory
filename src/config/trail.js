@@ -141,21 +141,56 @@ export const STOPS = [
       "Wat een mooie herinnering! Jullie zijn er bijna... ✨",
   },
   {
-    name: "Zwembad",
-    lat: 51.83833033970654,
-    lng: 5.82807232626584,
+    name: "Speeltuin 2",
+    lat: 51.8373541,
+    lng: 5.8295025,
     arrivalRadius: 20,
     puzzle: {
-      type: "code",
-      question:
-        "De code is verborgen in het volgende:\n\nJullie trouwdatum: dag × maand\n\nVoer het getal in als antwoord.",
-      answer: "1111",
-      hints: [
-        "De uitkomst is een getal van twee of meer cijfers.",
-        "Denk aan de specifieke dag en maand van jullie trouwdatum — vermenigvuldig die twee getallen.",
-      ],
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Slim opgelost! Door naar de volgende aanwijzing! 🔑",
+    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+  },
+  {
+    name: "Vogeltjes",
+    lat: 51.8383303,
+    lng: 5.8280723,
+    arrivalRadius: 20,
+    puzzle: {
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
+    },
+    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+  },
+  {
+    name: "Filimo",
+    lat: 51.836357039896214,
+    lng: 5.824969690886946,
+    arrivalRadius: 20,
+    puzzle: {
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
+    },
+    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+  },
+  {
+    name: "Steegje",
+    lat: 51.835570,
+    lng: 5.823362,
+    arrivalRadius: 15,
+    puzzle: {
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
+    },
+    completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
 ];
 
