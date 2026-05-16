@@ -437,6 +437,24 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 .refresh-btn:active, .reset-btn:active { transform: scale(0.92); }
 .refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
+/* ── Offline toast ──────────────────────────────────────────── */
+.offline-toast {
+  position: fixed;
+  top: calc(clamp(10px, 3vw, 16px) + clamp(44px, 13vw, 56px) + 10px);
+  right: clamp(10px, 3vw, 16px);
+  z-index: 200;
+  background: rgba(26, 18, 9, 0.92);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold-dim);
+  font-size: 0.8rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 200px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease;
+}
+
 /* ── Confirm dialog ─────────────────────────────────────────── */
 .confirm-overlay {
   position: fixed;
