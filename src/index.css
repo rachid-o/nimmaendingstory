@@ -455,6 +455,18 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   animation: fadeIn 0.2s ease;
 }
 
+/* ── Cat reward photo ───────────────────────────────────────── */
+.cat-reward {
+  width: min(260px, 70vw);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--gold-dim);
+  margin: 0.5rem auto;
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
 /* ── Confirm dialog ─────────────────────────────────────────── */
 .confirm-overlay {
   position: fixed;

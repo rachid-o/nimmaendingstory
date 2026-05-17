@@ -1,8 +1,9 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useCompass } from "../hooks/useCompass";
 import { haversineDistance, calculateBearing, formatDistance } from "../utils/geo";
 import { FINAL } from "../config/trail";
+import { randomCatUrl } from "../utils/catPhotos";
 
 function shortestPath(from, to) {
   const diff = ((to - from + 180) % 360 + 360) % 360 - 180;
@@ -13,6 +14,7 @@ export default function FinalScreen({ arrived, onArrived }) {
   const { position, error: gpsError } = useGeolocation();
   const { heading, permissionNeeded, requestPermission } = useCompass();
   const prevRotationRef = useRef(null);
+  const [catUrl] = useState(() => randomCatUrl());
 
   const distance = position
     ? haversineDistance(position.lat, position.lng, FINAL.lat, FINAL.lng)
@@ -47,6 +49,7 @@ export default function FinalScreen({ arrived, onArrived }) {
             line ? <p key={i}>{line}</p> : <br key={i} />
           )}
         </div>
+        <img src={catUrl} alt="Een lieve kat voor jullie" className="cat-reward" />
         <div className="final-hearts">❤️ ❤️ ❤️</div>
       </div>
     );

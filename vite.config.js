@@ -20,7 +20,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       base,
-      includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg'],
+      includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg'],
       manifest: {
         name: 'Anouk & Ruud',
         short_name: 'Anouk & Ruud',

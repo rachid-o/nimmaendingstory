@@ -126,6 +126,7 @@ export const STOPS = [
     lat: 51.8280866,
     lng: 5.8431979,
     arrivalRadius: 20,
+    showCat: true,
     cheatCode: "r2e9",
     puzzle: {
       type: "text",
@@ -140,6 +141,7 @@ export const STOPS = [
     lat: 51.8318952,
     lng: 5.8576368,
     arrivalRadius: 30,
+    showCat: true,
     cheatCode: "c5h6",
     puzzle: {
       type: "text",
@@ -154,6 +156,7 @@ export const STOPS = [
     lat: 51.819329,
     lng: 5.865646,
     arrivalRadius: 30,
+    showCat: true,
     cheatCode: "8ks4",
     puzzle: {
       type: "text",
@@ -168,6 +171,7 @@ export const STOPS = [
     lat: 51.8451501,
     lng: 5.867057,
     arrivalRadius: 10,
+    showCat: true,
     cheatCode: "p3n7",
     puzzle: {
       type: "text",
@@ -182,6 +186,7 @@ export const STOPS = [
     lat: 51.845777,
     lng: 5.8686818,
     arrivalRadius: 10,
+    showCat: true,
     cheatCode: "6fq2",
     puzzle: {
       type: "text",
@@ -196,6 +201,7 @@ export const STOPS = [
     lat: 51.847563,
     lng: 5.8705543,
     arrivalRadius: 30,
+    showCat: true,
     cheatCode: "9mw5",
     puzzle: {
       type: "text",
