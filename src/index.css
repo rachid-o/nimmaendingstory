@@ -429,7 +429,10 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 }
 .refresh-btn { top: clamp(10px, 3vw, 16px); }
 .reset-btn   { top: calc(clamp(10px, 3vw, 16px) * 2 + clamp(44px, 13vw, 56px)); font-size: clamp(0.9rem, 4vw, 1.1rem); }
-.skip-btn    { top: calc(clamp(10px, 3vw, 16px) * 3 + clamp(44px, 13vw, 56px) * 2); font-size: clamp(1rem, 4vw, 1.2rem); border-color: #555; color: #555; }
+.skip-btn      { top: calc(clamp(10px, 3vw, 16px) * 3 + clamp(44px, 13vw, 56px) * 2); font-size: clamp(1rem, 4vw, 1.2rem); border-color: #555; color: #555; }
+.show-puzzle-btn { position: fixed; left: clamp(10px, 3vw, 16px); top: calc(clamp(10px, 3vw, 16px) * 3 + clamp(44px, 13vw, 56px) * 2); z-index: 100; width: clamp(44px, 13vw, 56px); height: clamp(44px, 13vw, 56px); border-radius: 50%; background: rgba(26,18,9,0.7); border: 1px solid #555; color: #555; font-size: clamp(1rem, 4vw, 1.3rem); font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); -webkit-tap-highlight-color: transparent; transition: color 0.2s, border-color 0.2s; }
+.show-puzzle-btn:hover { color: var(--gold); border-color: var(--gold); }
+.show-puzzle-btn:active { transform: scale(0.92); }
 .tips-btn    { top: calc(clamp(10px, 3vw, 16px) * 4 + clamp(44px, 13vw, 56px) * 3); font-size: clamp(1rem, 4vw, 1.2rem); font-family: 'Cinzel', serif; font-weight: 700; }
 .test-btn    { top: calc(clamp(10px, 3vw, 16px) * 5 + clamp(44px, 13vw, 56px) * 4); right: 50%; transform: translateX(50%); width: auto; padding: 0 14px; border-radius: 8px; font-size: clamp(0.75rem, 3vw, 0.9rem); font-weight: 700; border-color: #555; color: #555; letter-spacing: 0.05em; }
 

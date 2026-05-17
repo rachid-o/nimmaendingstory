@@ -10,6 +10,7 @@ import FinalScreen from "./components/FinalScreen";
 import RefreshButton from "./components/RefreshButton";
 import ResetButton from "./components/ResetButton";
 import SkipButton from "./components/SkipButton";
+import ShowPuzzleButton from "./components/ShowPuzzleButton";
 import TipsButton from "./components/TipsButton";
 import TestButton from "./components/TestButton";
 import TestScreen from "./components/TestScreen";
@@ -106,6 +107,9 @@ export default function App() {
         <SkipButton
           onSkip={screen === "navigate" ? handleNextStop : handleFinalArrived}
         />
+      )}
+      {debugMode && screen === "navigate" && validStop && (
+        <ShowPuzzleButton onShow={handleArrived} />
       )}
       {debugMode && <TestButton onClick={() => setShowTest(true)} />}
       {showTest && (
