@@ -23,8 +23,8 @@ export default defineConfig({
       includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg'],
       manifest: {
         name: 'Nimma Ending Story',
-        short_name: 'NES',
-        description: 'Een GPS-puzzeltocht voor een bijzonder stel',
+        short_name: 'Nimma Ending Story',
+        description: 'Een GPS-puzzeltocht',
         theme_color: '#1a1209',
         background_color: '#1a1209',
         display: 'standalone',
