@@ -694,8 +694,10 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 /* ── Mastermind puzzle ──────────────────────────────────────── */
 .mm-slots {
   display: flex;
-  gap: clamp(8px, 2.5vw, 12px);
+  flex-wrap: wrap;
+  gap: clamp(6px, 2vw, 10px);
   justify-content: center;
+  max-width: min(100%, 400px);
 }
 .mm-slot {
   width: clamp(52px, 14vw, 64px);
@@ -745,6 +747,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 }
 .mm-option-btn:hover { border-color: var(--gold); }
 .mm-option-btn:active { transform: scale(0.92); }
+.mm-option-btn.used { opacity: 0.35; }
 
 .mm-actions {
   display: flex;
