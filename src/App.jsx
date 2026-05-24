@@ -9,7 +9,6 @@ import StopCompleteScreen from "./components/StopCompleteScreen";
 import FinalScreen from "./components/FinalScreen";
 import RefreshButton from "./components/RefreshButton";
 import ResetButton from "./components/ResetButton";
-import SkipButton from "./components/SkipButton";
 import FwButton from "./components/FwButton";
 import TipsButton from "./components/TipsButton";
 import TestButton from "./components/TestButton";
@@ -105,11 +104,6 @@ export default function App() {
       <TipsButton />
       {showSkip && screen === "navigate" && validStop && (
         <FwButton onFw={handleArrived} />
-      )}
-      {showSkip && (
-        <SkipButton
-          onSkip={screen === "navigate" ? handleNextStop : handleFinalArrived}
-        />
       )}
       {debugMode && <TestButton onClick={() => setShowTest(true)} />}
       {showTest && (
