@@ -844,8 +844,51 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   overflow: hidden;
   transition: border-color 0.15s;
   line-height: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .po-photo-link:hover { border-color: var(--gold); }
+.po-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.po-lightbox-close {
+  position: absolute;
+  top: clamp(12px, 4vw, 20px);
+  right: clamp(12px, 4vw, 20px);
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  -webkit-tap-highlight-color: transparent;
+}
+.po-lightbox-close:hover { color: var(--text); }
+.po-lightbox-label {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.po-lightbox-img {
+  max-width: 92vw;
+  max-height: 80dvh;
+  border-radius: var(--radius);
+  object-fit: contain;
+  box-shadow: var(--shadow);
+}
 .po-photo-thumb {
   width: clamp(64px, 18vw, 88px);
   height: clamp(64px, 18vw, 88px);

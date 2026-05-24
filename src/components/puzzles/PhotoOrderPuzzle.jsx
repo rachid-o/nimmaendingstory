@@ -7,6 +7,7 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
   const [attempts, setAttempts] = useState([]);
   const [feedback, setFeedback] = useState(null);
   const [solved, setSolved] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
 
   function isValidSequence(val) {
     if (val.length !== n) return false;
@@ -44,14 +45,13 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
         {puzzle.photos.map((photo, i) => (
           <div key={i} className="po-photo-item">
             <span className="po-photo-label">{photo.label}</span>
-            <a
-              href={photo.url}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
               className="po-photo-link"
+              onClick={() => setLightbox(photo)}
+              type="button"
             >
               <img src={photo.url} alt={photo.label} className="po-photo-thumb" />
-            </a>
+            </button>
           </div>
         ))}
       </div>
@@ -100,6 +100,14 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
         <p className="pa-check" style={{ fontSize: "1.2rem" }}>
           🎉 Perfecte volgorde!
         </p>
+      )}
+
+      {lightbox && (
+        <div className="po-lightbox" onClick={() => setLightbox(null)}>
+          <button className="po-lightbox-close" onClick={() => setLightbox(null)} type="button" aria-label="Sluiten">✕</button>
+          <span className="po-lightbox-label">{lightbox.label}</span>
+          <img src={lightbox.url} alt={lightbox.label} className="po-lightbox-img" />
+        </div>
       )}
     </div>
   );

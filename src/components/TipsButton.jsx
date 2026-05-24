@@ -14,7 +14,7 @@ export default function TipsButton() {
       <button
         className="tips-btn"
         onClick={() => setOpen(true)}
-        title="Tips"
+        title="Algemene tips"
         aria-label="Tips tonen"
       >
         ?
