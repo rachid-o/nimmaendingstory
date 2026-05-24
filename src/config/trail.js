@@ -116,6 +116,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "r2e9",
+    arrivalMessage: "Jullie staan voor nummer 89. Een adres dat voor altijd een plekje in jullie hart heeft.\n\nDe tijd vliegt voorbij — maar herinneringen blijven.",
     puzzle: {
       type: "photo-order",
       question: "Zet de foto's in de juiste chronologische volgorde.\n\nKlik op de foto om te vergroten. Klik nog een keer om het weer te verkleinen",
@@ -140,6 +141,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
+    arrivalMessage: "Welkom bij Café Hop en Heivuur! Een gezellige plek voor een quiz",
     puzzle: {
       type: "mastermind",
       question: "Kraken jullie de code?",
@@ -156,6 +158,7 @@ export const STOPS = [
     arrivalRadius: 15,
     showCat: true,
     cheatCode: "8ks4",
+    arrivalMessage: "Jullie staan op het Erasmusplein. ",
     puzzle: {
       type: "multi",
       question: "Beantwoord de vragen bij de muurschilderingen.",
@@ -175,6 +178,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "b9x4",
+    arrivalMessage: "Hier is het RSC.",
     puzzle: {
       type: "text",
       question: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum" 
@@ -191,6 +195,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "p3n7",
+    arrivalMessage: "Welkom bij LUX! Hét filmhuis van Nijmegen.\n\nHoeveel films kennen jullie eigenlijk?",
     puzzle: {
       type: "photo-quiz",
       question: "Welke film zie je op elke foto?",
@@ -214,6 +219,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
+    arrivalMessage: "TODO",
     puzzle: {
       type: "text",
       question: "Hoeveel is 1 + 1?",
@@ -229,6 +235,7 @@ export const STOPS = [
     arrivalRadius: 30,
     showCat: true,
     cheatCode: "9mw5",
+    arrivalMessage: "Jullie staan op het Valkhof — een van de mooiste en oudste plekken van Nijmegen. Hier kruisen de Waal, de Romeinse geschiedenis en het heden elkaar.\n\nNeem even de tijd om te kijken. En lees.",
     puzzle: {
       type: "multi",
       question: "Beantwoord de vragen bij het Valkhof.",
@@ -247,11 +254,11 @@ export const STOPS = [
         },
         {
           question: "TODO 1",
-          answers: ["antw 1"],
+          answers: ["1"],
         },
         {
           question: "TODO 2",
-          answers: ["antw 2"],
+          answers: ["2"],
         },
       ],
       hints: ["Vraag 4: Antw 1", "Vraag 5: Antw 2"],
@@ -265,13 +272,14 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "k3p7",
+    arrivalMessage: "Bijna aan het einde van jullie tocht! Café de Burgemeester is de laatste stop.\n\nNog één opdracht, en dan wacht de finale.",
     puzzle: {
       type: "text",
-      question: "Wat is 1 + 1?",
+      question: "TODO Logica puzzel. Wat is 1 + 1?",
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Dit was Café de Burgemeester. Op naar de volgende stop.",
+    completeMessage: "Dit was Café de Burgemeester. Op naar huis",
   },  
 
 ];
