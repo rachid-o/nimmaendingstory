@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { STOPS } from "../config/trail";
 import MastermindPuzzle from "./puzzles/MastermindPuzzle";
+import MultiQuestionPuzzle from "./puzzles/MultiQuestionPuzzle";
 import PhotoAnswerPuzzle from "./puzzles/PhotoAnswerPuzzle";
 import PhotoOrderPuzzle from "./puzzles/PhotoOrderPuzzle";
 
@@ -81,6 +82,8 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
 
       {puzzle.type === "mastermind" ? (
         <MastermindPuzzle puzzle={puzzle} onSolved={onSolved} />
+      ) : puzzle.type === "multi" ? (
+        <MultiQuestionPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : puzzle.type === "photo-answer" ? (
         <PhotoAnswerPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : puzzle.type === "photo-order" ? (

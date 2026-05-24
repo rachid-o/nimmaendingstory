@@ -157,10 +157,14 @@ export const STOPS = [
     showCat: true,
     cheatCode: "8ks4",
     puzzle: {
-      type: "text",
-      question: "Wat is 1 + 1?",
-      answer: "2",
-      hints: ["Het antwoord is een getal."],
+      type: "multi",
+      question: "Beantwoord de vragen bij de muurschilderingen.",
+      questions: [
+        { question: "Wie heeft je rug?", answers: ["de spar", "spar"] },
+        { question: "Wat moet je doen?", answers: ["iets dat er toe doet", "er toe doet", "ertoe doet"] },
+        { question: "Wie denkt anders dan ze doen?", answers: ["volt"] },
+        { question: "Wat is voor elkaar?", answers: ["rookvrij terrein", "rookvrij"] },
+      ],
     },
     completeMessage: "Dit was het Erasmusgebouw.",
   },
@@ -173,7 +177,7 @@ export const STOPS = [
     cheatCode: "b9x4",
     puzzle: {
       type: "text",
-      question: "Wat is 1 + 1?",
+      question: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
