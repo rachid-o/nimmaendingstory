@@ -20,11 +20,11 @@ export default function WelcomeScreen({ onStart }) {
           line ? <p key={i}>{line}</p> : <br key={i} />
         )}
       </div>
-
+{/* 
       <div className="stop-count">
         <span className="badge">{STOPS.length} stops</span>
         <span className="badge">GPS-tocht</span>
-      </div>
+      </div> */}
 
       <button className="btn-primary" onClick={onStart}>
         Start het avontuur →

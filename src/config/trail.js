@@ -10,7 +10,10 @@ export const DEBUG_PIN = "12369874";
 export const WELCOME = {
   title: "20 Jaar Samen! 🗺️",
   message:
-    "Lieve avonturiers,\n\nVandaag gaan jullie op pad langs plekken die er toe doen. Los de raadsels op, volg het kompas en geniet van elke stap samen.\n\nVeel plezier en succes!",
+    "Lieve avonturiers,\n\nVandaag gaan jullie op pad langs plekken die er toe doen. Volg het kompas, los puzzels op.\n\n"
+    + "Neem fiets, pen en papier mee. Laat ons weten wanneer je gaat > hulplijn bellen\n"
+    + "De route fietsen duurt 45 minuten. Je kunt elke dag gaan, zolang het licht is.\n\n"
+    + "Veel plezier en succes!",
   photo: null, // Zet hier het pad naar een foto, bijv. "/photo.jpg"
 };
 
