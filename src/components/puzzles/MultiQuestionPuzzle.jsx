@@ -61,7 +61,7 @@ export default function MultiQuestionPuzzle({ puzzle, onSolved }) {
           className="btn-primary"
           type="button"
           onClick={handleCheck}
-          disabled={!allFilled}
+          disabled={solved}
         >
           Controleer →
         </button>
