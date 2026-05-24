@@ -230,10 +230,31 @@ export const STOPS = [
     showCat: true,
     cheatCode: "9mw5",
     puzzle: {
-      type: "text",
-      question: "Wat is 1 + 1?",
-      answer: "2",
-      hints: ["Getal onder de 10", "Getal onder de 5", "Getal onder de 3"],
+      type: "multi",
+      question: "Beantwoord de vragen bij het Valkhof.",
+      questions: [
+        {
+          question: "Wie keek knarsetandend toe, hoe wrekende Romeinse legers naderen?",
+          answers: ["claudius"],
+        },
+        {
+          question: "Welke kleur heeft de circusachtige tent van het podium van de Kaaij?",
+          answers: ["blauw wit", "wit blauw", "blauw en wit", "wit en blauw"],
+        },
+        {
+          question: "Zoek de plek waarvan de tekst vrij vertaald is: 'Weet ge mij een plaats te noemen, die op zooveel schoons kan roemen'? Geniet van het uitzicht van de Waal en vertel me: wat is Nijmegen?",
+          answers: ["gastvrij"],
+        },
+        {
+          question: "TODO 1",
+          answers: ["antw 1"],
+        },
+        {
+          question: "TODO 2",
+          answers: ["antw 2"],
+        },
+      ],
+      hints: ["Vraag 4: Antw 1", "Vraag 5: Antw 2"],
     },
     completeMessage: "Dit was het Valkhof. Op naar de volgende stop.",
   },
