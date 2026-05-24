@@ -1,16 +1,6 @@
-# Love Letters Trail
+# Nimma Ending Story
 
 Een GPS-puzzeltocht PWA gebouwd als cadeau voor een stel dat 20 jaar samen is. Ze worden via een kompas-pijl langs persoonlijke locaties geleid en moeten per stop een raadsel oplossen.
-
-## Dev-commando's
-
-```bash
-npm run dev      # dev server (localhost:5173)
-npm run build    # productie-build naar dist/
-npm run preview  # preview van de build lokaal
-```
-
-Deployment gaat automatisch via GitHub Actions bij een push naar `main`. Live op: `https://rachid-o.github.io/loveletterstrail/`
 
 ## Configuratie aanpassen
 
@@ -57,7 +47,7 @@ De service worker (`vite-plugin-pwa` + Workbox) cached alle assets na het eerste
 
 ## Deployment
 
-GitHub Actions (`.github/workflows/deploy.yml`) bouwt en deployt automatisch bij een push naar `main`. Vite gebruikt `base: '/loveletterstrail/'` alleen in de GitHub Actions-omgeving (`GITHUB_ACTIONS=true`), lokaal is de base `/`.
+GitHub Actions (`.github/workflows/deploy.yml`) bouwt en deployt automatisch bij een push naar `main`. Vite gebruikt `base: '/nimmaendingstory/'` alleen in de GitHub Actions-omgeving (`GITHUB_ACTIONS=true`), lokaal is de base `/`.
 
 ## Voor elke commit
 

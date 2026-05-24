@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-// Op GitHub Pages draait de app op /loveletterstrail/ — lokaal op /
-const base = process.env.GITHUB_ACTIONS ? '/loveletterstrail/' : '/'
+// Op GitHub Pages draait de app op /nimmaendingstory/ — lokaal op /
+const base = process.env.GITHUB_ACTIONS ? '/nimmaendingstory/' : '/'
 
 export default defineConfig({
   base,
