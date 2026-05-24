@@ -15,6 +15,7 @@ export const WELCOME = {
 };
 
 export const STOPS = [
+/*  
   {
     name: "Speeltuin Neptunus",
     lat: 51.838921,
@@ -103,7 +104,8 @@ export const STOPS = [
       hints: ["Het antwoord is een getal."],
     },
     completeMessage: "Steegje Lanteerne! Op naar de volgende stop.",
-  },  
+  },
+//*/
   {
     name: "Tijgerstraat 89",
     lat: 51.8280866,
@@ -112,15 +114,24 @@ export const STOPS = [
     showCat: true,
     cheatCode: "r2e9",
     puzzle: {
-      type: "text",
-      question: "Wat is 1 + 1?",
-      answer: "2",
-      hints: ["Het antwoord is een getal."],
+      type: "photo-order",
+      question: "Zet de foto's in de juiste chronologische volgorde.",
+      photos: [
+        { label: "A", url: `${import.meta.env.BASE_URL}tijdvliegt/A.jpg` },
+        { label: "B", url: `${import.meta.env.BASE_URL}tijdvliegt/B.jpg` },
+        { label: "C", url: `${import.meta.env.BASE_URL}tijdvliegt/C.jpg` },
+        { label: "D", url: `${import.meta.env.BASE_URL}tijdvliegt/D.jpg` },
+        { label: "E", url: `${import.meta.env.BASE_URL}tijdvliegt/E.jpg` },
+        { label: "F", url: `${import.meta.env.BASE_URL}tijdvliegt/F.jpg` },
+        { label: "G", url: `${import.meta.env.BASE_URL}tijdvliegt/G.jpg` },
+        { label: "H", url: `${import.meta.env.BASE_URL}tijdvliegt/H.jpg` },
+      ],
+      answer: "GECAFHBD",
     },
-    completeMessage: "Multatuliplaats! Op naar de volgende stop.",
+    completeMessage: "Dit was de Tijgerstraat! Op naar de volgende stop.",
   },
   {
-    name: "Cafe Hop en Heivuur",
+    name: "Café Hop en Heivuur",
     lat: 51.8154819,
     lng: 5.851123,
     arrivalRadius: 20,
@@ -132,7 +143,7 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Multatuliplaats! Op naar de volgende stop.",
+    completeMessage: "Dit was Café Hop en Heivuur. Op naar de volgende stop.",
   },
   {
     name: "Erasmusplein",
@@ -147,7 +158,7 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Erasmusgebouw! Op naar de volgende stop.",
+    completeMessage: "Dit was het Erasmusgebouw.",
   },
   {
     name: "RSC",
@@ -162,7 +173,7 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Erasmusgebouw! Op naar de volgende stop.",
+    completeMessage: "Dit was het RSC (waar ANS zit) Op naar de volgende stop.",
   },  
   {
     name: "LUX",
@@ -177,7 +188,7 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "LUX! Op naar de volgende stop.",
+    completeMessage: "Dat was LUX!",
   },
   {
     name: "Hertogstraat",
@@ -192,7 +203,7 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+    completeMessage: "Dit was de Hertogstraat. Op naar de volgende stop.",
   },
   {
     name: "Valkhof",
@@ -207,10 +218,10 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+    completeMessage: "Dit was het Valkhof. Op naar de volgende stop.",
   },
   {
-    name: "Cafe burgemeester",
+    name: "Café de Burgemeester",
     lat: 51.8476145,
     lng: 5.8648496,
     arrivalRadius: 10,
@@ -222,16 +233,15 @@ export const STOPS = [
       answer: "2",
       hints: ["Het antwoord is een getal."],
     },
-    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+    completeMessage: "Dit was Café de Burgemeester. Op naar de volgende stop.",
   },  
-
 
 ];
 
 export const FINAL = {
   lat: 51.8376845,
   lng: 5.8325001,
-  arrivalRadius: 30,
+  arrivalRadius: 5,
   title: "Jullie zijn er! 🥂",
   message:
     "20 jaar geleden begon het mooiste avontuur van jullie leven. Bedankt dat jullie samen zo'n inspirerend stel zijn.\n\nGefeliciteerd met jullie jubileum!",

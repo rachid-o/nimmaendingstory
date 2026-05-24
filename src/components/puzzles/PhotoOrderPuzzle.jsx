@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
   const n = puzzle.photos.length;
+  const labels = puzzle.photos.map(p => p.label.toUpperCase());
   const [input, setInput] = useState("");
   const [attempts, setAttempts] = useState([]);
   const [feedback, setFeedback] = useState(null);
@@ -9,14 +10,12 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
 
   function isValidSequence(val) {
     if (val.length !== n) return false;
-    const digits = val.split("").map(Number);
-    if (digits.some(d => isNaN(d) || d < 1 || d > n)) return false;
-    const seen = new Set(digits);
-    return seen.size === n;
+    const chars = val.toUpperCase().split("");
+    return chars.every(c => labels.includes(c)) && new Set(chars).size === n;
   }
 
   function countCorrect(val) {
-    return val.split("").filter((ch, i) => ch === puzzle.answer[i]).length;
+    return val.toUpperCase().split("").filter((ch, i) => ch === puzzle.answer[i].toUpperCase()).length;
   }
 
   function handleSubmit(e) {
@@ -51,7 +50,7 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
               rel="noopener noreferrer"
               className="po-photo-link"
             >
-              📷
+              <img src={photo.url} alt={photo.label} className="po-photo-thumb" />
             </a>
           </div>
         ))}
@@ -77,15 +76,18 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
           <input
             className={`answer-input${feedback ? " input-wrong" : ""}`}
             type="text"
-            inputMode="numeric"
             value={input}
-            onChange={e => setInput(e.target.value.replace(/[^0-9]/g, "").slice(0, n))}
-            placeholder={`Volgorde (bijv. ${puzzle.answer})`}
+            onChange={e => {
+              const valid = labels.join("");
+              const re = new RegExp(`[^${valid}]`, "gi");
+              setInput(e.target.value.replace(re, "").toUpperCase().slice(0, n));
+            }}
+            placeholder={`Volgorde (bijv. ${labels.join("")})`}
             autoComplete="off"
           />
           {feedback === "invalid" && (
             <p className="wrong-feedback">
-              Voer elk getal van 1 t/m {n} precies één keer in.
+              Voer elke letter ({labels.join("/")}) precies één keer in.
             </p>
           )}
           <button className="btn-primary" type="submit" disabled={input.length !== n}>

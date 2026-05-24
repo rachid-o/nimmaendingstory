@@ -838,16 +838,20 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   font-weight: 700;
 }
 .po-photo-link {
-  background: var(--bg-card);
-  border: 1px solid var(--gold-dim);
+  display: block;
+  border: 2px solid var(--gold-dim);
   border-radius: var(--radius);
-  padding: 8px 14px;
-  color: var(--gold-dim);
-  font-size: 1rem;
-  text-decoration: none;
-  transition: border-color 0.15s, color 0.15s;
+  overflow: hidden;
+  transition: border-color 0.15s;
+  line-height: 0;
 }
-.po-photo-link:hover { border-color: var(--gold); color: var(--gold); }
+.po-photo-link:hover { border-color: var(--gold); }
+.po-photo-thumb {
+  width: clamp(64px, 18vw, 88px);
+  height: clamp(64px, 18vw, 88px);
+  object-fit: cover;
+  display: block;
+}
 .po-history {
   width: 100%;
   max-height: 28dvh;
