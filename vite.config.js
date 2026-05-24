@@ -22,8 +22,8 @@ export default defineConfig({
       base,
       includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg'],
       manifest: {
-        name: 'Anouk & Ruud',
-        short_name: 'Anouk & Ruud',
+        name: 'Nimma Ending Story',
+        short_name: 'NES',
         description: 'Een GPS-puzzeltocht voor een bijzonder stel',
         theme_color: '#1a1209',
         background_color: '#1a1209',
