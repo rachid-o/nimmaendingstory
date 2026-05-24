@@ -4,6 +4,7 @@ import MastermindPuzzle from "./puzzles/MastermindPuzzle";
 import MultiQuestionPuzzle from "./puzzles/MultiQuestionPuzzle";
 import PhotoAnswerPuzzle from "./puzzles/PhotoAnswerPuzzle";
 import PhotoOrderPuzzle from "./puzzles/PhotoOrderPuzzle";
+import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
 
 
 export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose }) {
@@ -86,6 +87,8 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
         <MultiQuestionPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : puzzle.type === "photo-answer" ? (
         <PhotoAnswerPuzzle puzzle={puzzle} onSolved={onSolved} />
+      ) : puzzle.type === "photo-quiz" ? (
+        <PhotoQuizPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : puzzle.type === "photo-order" ? (
         <PhotoOrderPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : (

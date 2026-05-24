@@ -118,7 +118,7 @@ export const STOPS = [
     cheatCode: "r2e9",
     puzzle: {
       type: "photo-order",
-      question: "Zet de foto's in de juiste chronologische volgorde.",
+      question: "Zet de foto's in de juiste chronologische volgorde.\n\nKlik op de foto om te vergroten. Klik nog een keer om het weer te verkleinen",
       photos: [
         { label: "A", url: `${import.meta.env.BASE_URL}tijdvliegt/A.jpg` },
         { label: "B", url: `${import.meta.env.BASE_URL}tijdvliegt/B.jpg` },
@@ -191,10 +191,18 @@ export const STOPS = [
     showCat: true,
     cheatCode: "p3n7",
     puzzle: {
-      type: "text",
-      question: "Wat is 1 + 1?",
-      answer: "2",
-      hints: ["Het antwoord is een getal."],
+      type: "photo-quiz",
+      question: "Welke film zie je op elke foto?",
+      photos: [
+        { url: `${import.meta.env.BASE_URL}filmquiz/1.jpg`, answer: "Lion King" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/2.jpg`, answer: "Terminator" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/3.jpg`, answer: "Life of Pie" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/4.jpg`, answer: "Godzilla" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/5.jpg`, answer: "E.T." },
+        { url: `${import.meta.env.BASE_URL}filmquiz/6.jpg`, answer: "The shining" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/7.jpg`, answer: "Madagascar" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/8.jpg`, answer: "Neverending Story" },
+      ],
     },
     completeMessage: "Dat was LUX!",
   },

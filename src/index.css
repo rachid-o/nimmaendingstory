@@ -385,6 +385,13 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 .mq-result-icon.correct { color: #4caf50; }
 .mq-result-icon.wrong { color: var(--red); }
 
+.pq-list { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.pq-item { display: flex; align-items: center; gap: 12px; }
+.pq-thumb-btn { flex-shrink: 0; background: none; border: none; padding: 0; cursor: pointer; }
+.pq-thumb { width: clamp(60px, 16vw, 80px); height: clamp(60px, 16vw, 80px); object-fit: cover; border-radius: var(--radius); }
+.pq-input-row { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+.pq-input { text-align: left; font-size: 1.05rem; padding: 10px 14px; }
+
 .wrong-feedback {
   color: var(--red);
   font-size: 1rem;
