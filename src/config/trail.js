@@ -20,7 +20,7 @@ export const STOPS = [
     lat: 51.838921,
     lng: 5.832842,
     arrivalRadius: 10,
-    cheatCode: "k3p7",
+    cheatCode: "bbbb",
     puzzle: {
       type: "riddle",
       question: "1 + 1 = ?",
@@ -29,29 +29,12 @@ export const STOPS = [
     },
     completeMessage: "Geweldig! Jullie eerste stop zit erop! 🎉",
   },
-  // {
-  //   name: "Bankje Planetenpark",
-  //   lat: 51.840211,
-  //   lng: 5.833155,
-  //   arrivalRadius: 20,
-  //   puzzle: {
-  //     type: "riddle",
-  //     question:
-  //       "Ik sta stil maar loop altijd door,\nIk heb wijzers maar geen handen.\nIk tick, ik tok, elk uur opnieuw —\nwat ben ik?",
-  //     answer: "klok",
-  //     hints: [
-  //       "Ik heb geen mond, toch spreek ik de tijd.",
-  //       "Je vindt me in bijna elke kamer thuis — aan de muur.",
-  //     ],
-  //   },
-  //   completeMessage: "Geweldig! Jullie eerste stop zit erop! 🎉",
-  // },
   {
     name: "Midden in Planetenpark",
     lat: 51.838292,
     lng: 5.830611,
     arrivalRadius: 20,
-    cheatCode: "b9x4",
+    cheatCode: "aaaa",
     puzzle: {
       type: "memory",
       question:
@@ -137,10 +120,10 @@ export const STOPS = [
     completeMessage: "Multatuliplaats! Op naar de volgende stop.",
   },
   {
-    name: "Multatuliplaats",
-    lat: 51.8318952,
-    lng: 5.8576368,
-    arrivalRadius: 30,
+    name: "Cafe Hop en Heivuur",
+    lat: 51.8154819,
+    lng: 5.851123,
+    arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
     puzzle: {
@@ -152,10 +135,10 @@ export const STOPS = [
     completeMessage: "Multatuliplaats! Op naar de volgende stop.",
   },
   {
-    name: "Erasmusgebouw",
+    name: "Erasmusplein",
     lat: 51.819329,
     lng: 5.865646,
-    arrivalRadius: 30,
+    arrivalRadius: 15,
     showCat: true,
     cheatCode: "8ks4",
     puzzle: {
@@ -166,6 +149,21 @@ export const STOPS = [
     },
     completeMessage: "Erasmusgebouw! Op naar de volgende stop.",
   },
+  {
+    name: "RSC",
+    lat: 51.8185806,
+    lng: 5.8669618,
+    arrivalRadius: 20,
+    showCat: true,
+    cheatCode: "b9x4",
+    puzzle: {
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
+    },
+    completeMessage: "Erasmusgebouw! Op naar de volgende stop.",
+  },  
   {
     name: "LUX",
     lat: 51.8451501,
@@ -211,6 +209,22 @@ export const STOPS = [
     },
     completeMessage: "Goed gedaan! Op naar de volgende stop.",
   },
+  {
+    name: "Cafe burgemeester",
+    lat: 51.8476145,
+    lng: 5.8648496,
+    arrivalRadius: 10,
+    showCat: true,
+    cheatCode: "k3p7",
+    puzzle: {
+      type: "text",
+      question: "Wat is 1 + 1?",
+      answer: "2",
+      hints: ["Het antwoord is een getal."],
+    },
+    completeMessage: "Goed gedaan! Op naar de volgende stop.",
+  },  
+
 
 ];
 
