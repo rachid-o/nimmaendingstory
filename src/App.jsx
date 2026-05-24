@@ -4,6 +4,7 @@ import { useProgress } from "./hooks/useProgress";
 import PinScreen from "./components/PinScreen";
 import WelcomeScreen from "./components/WelcomeScreen";
 import NavigationScreen from "./components/NavigationScreen";
+import ArrivalScreen from "./components/ArrivalScreen";
 import PuzzleScreen from "./components/PuzzleScreen";
 import StopCompleteScreen from "./components/StopCompleteScreen";
 import FinalScreen from "./components/FinalScreen";
@@ -31,6 +32,10 @@ export default function App() {
   }, [update]);
 
   const handleArrived = useCallback(() => {
+    update({ screen: "arrival" });
+  }, [update]);
+
+  const handleStartPuzzle = useCallback(() => {
     update({ screen: "puzzle" });
   }, [update]);
 
@@ -52,7 +57,7 @@ export default function App() {
   }, [update]);
 
   useEffect(() => {
-    const stopScreens = ["navigate", "puzzle", "stopComplete"];
+    const stopScreens = ["navigate", "arrival", "puzzle", "stopComplete"];
     if (stopScreens.includes(screen) && currentStopIndex >= STOPS.length) {
       update({ screen: "final" });
     }
@@ -65,6 +70,8 @@ export default function App() {
   else if (screen === "welcome") content = <WelcomeScreen onStart={handleStart} />;
   else if (screen === "navigate" && validStop)
     content = <NavigationScreen stopIndex={currentStopIndex} onArrived={handleArrived} debugMode={debugMode} />;
+  else if (screen === "arrival" && validStop)
+    content = <ArrivalScreen stopIndex={currentStopIndex} onStart={handleStartPuzzle} />;
   else if (screen === "puzzle" && validStop)
     content = (
       <PuzzleScreen

@@ -398,6 +398,22 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   max-width: 90%;
 }
 
+/* ── Arrival screen ─────────────────────────────────────────── */
+.arrival-screen { justify-content: center; gap: clamp(16px, 4vh, 28px); }
+.arrival-icon { font-size: 3rem; animation: pop 0.4s cubic-bezier(.36,2,.45,.9) both; }
+.arrival-name { font-size: clamp(1.4rem, 5vw, 2rem); text-align: center; }
+.arrival-message {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: clamp(16px, 4vw, 24px);
+  max-width: min(100%, 480px);
+  width: 100%;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
+  line-height: 1.65;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
 /* ── Stop complete screen ───────────────────────────────────── */
 .complete-icon { font-size: 6rem; animation: pop 0.5s cubic-bezier(.36,2,.45,.9) both; }
 
