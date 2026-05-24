@@ -296,8 +296,6 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 /* ── Puzzle screen ──────────────────────────────────────────── */
 .puzzle-screen { justify-content: space-evenly; padding-top: clamp(16px, 4vh, 32px); }
 
-.puzzle-type-icon { font-size: 3.5rem; }
-
 .puzzle-box {
   background: var(--bg-card);
   border: 1px solid var(--gold-dim);

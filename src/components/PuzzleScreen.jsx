@@ -4,14 +4,6 @@ import MastermindPuzzle from "./puzzles/MastermindPuzzle";
 import PhotoAnswerPuzzle from "./puzzles/PhotoAnswerPuzzle";
 import PhotoOrderPuzzle from "./puzzles/PhotoOrderPuzzle";
 
-const TYPE_ICON = {
-  riddle: "🧩",
-  code: "🔢",
-  memory: "💛",
-  mastermind: "🎯",
-  "photo-answer": "📷",
-  "photo-order": "🔢",
-};
 
 export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose }) {
   const isPreview = !!overridePuzzle;
@@ -52,8 +44,6 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
           Stop {stopIndex + 1} / {STOPS.length}
         </div>
       )}
-
-      <div className="puzzle-type-icon">{TYPE_ICON[puzzle.type] ?? "❓"}</div>
 
       <div className="puzzle-box">
         <p className="puzzle-question">{puzzle.question}</p>

@@ -2,17 +2,6 @@ import { STOPS, FINAL } from "../config/trail";
 
 const TEST_PUZZLES = [
   {
-    label: "🎯 Mastermind",
-    puzzle: {
-      type: "mastermind",
-      question: "Raad de geheime combinatie!",
-      code: [0, 1, 2, 3],
-      options: ["A", "B", "C", "D", "E", "F"],
-      slots: 4,
-      hints: ["A=1, B=2, C=3, D=4 — het antwoord is ABCD."],
-    },
-  },
-  {
     label: "📷 Foto-antwoord",
     puzzle: {
       type: "photo-answer",
@@ -21,20 +10,6 @@ const TEST_PUZZLES = [
         { url: "https://picsum.photos/id/15/400/300", answer: "natuur" },
         { url: "https://picsum.photos/id/42/400/300", answer: "stad" },
       ],
-      hints: [],
-    },
-  },
-  {
-    label: "🔢 Foto-volgorde",
-    puzzle: {
-      type: "photo-order",
-      question: "Zet de foto's op chronologische volgorde",
-      photos: [
-        { label: "1", url: "https://picsum.photos/id/10/400/300" },
-        { label: "2", url: "https://picsum.photos/id/20/400/300" },
-        { label: "3", url: "https://picsum.photos/id/30/400/300" },
-      ],
-      answer: "312",
       hints: [],
     },
   },
