@@ -90,7 +90,7 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
               Voer elke letter ({labels.join("/")}) precies één keer in.
             </p>
           )}
-          <button className="btn-primary" type="submit" disabled={input.length !== n}>
+          <button className="btn-primary" type="submit">
             Controleer →
           </button>
         </form>
