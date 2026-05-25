@@ -18,6 +18,11 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
   const [feedback, setFeedback] = useState(null);
   const [hintsShown, setHintsShown] = useState(0);
   const [showHintOverlay, setShowHintOverlay] = useState(false);
+  const [puzzleDone, setPuzzleDone] = useState(false);
+
+  function handlePuzzleSolved() {
+    setPuzzleDone(true);
+  }
 
   function handleHintOpen() {
     if (hintsShown === 0) setHintsShown(1);
@@ -29,7 +34,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
     const trimmed = input.trim().toLowerCase();
     if (trimmed === puzzle.answer.toLowerCase()) {
       setFeedback(null);
-      onSolved();
+      setPuzzleDone(true);
     } else {
       setFeedback("wrong");
       setInput("");
@@ -84,19 +89,19 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
       )}
 
       {puzzle.type === "mastermind" ? (
-        <MastermindPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <MastermindPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "multi" ? (
-        <MultiQuestionPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <MultiQuestionPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "photo-answer" ? (
-        <PhotoAnswerPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <PhotoAnswerPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "photo-quiz" ? (
-        <PhotoQuizPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <PhotoQuizPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "photo-order" ? (
-        <PhotoOrderPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <PhotoOrderPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "photo-authentic" ? (
-        <PhotoAuthenticPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <PhotoAuthenticPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "logic-grid" ? (
-        <LogicGridPuzzle puzzle={puzzle} onSolved={onSolved} />
+        <LogicGridPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : (
         <>
           <form className="answer-form" onSubmit={handleSubmit}>
@@ -110,14 +115,22 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
               autoCorrect="off"
               spellCheck="false"
             />
-            <button className="btn-primary" type="submit" disabled={!input.trim()}>
-              Controleer →
-            </button>
+            {!puzzleDone && (
+              <button className="btn-primary" type="submit" disabled={!input.trim()}>
+                Controleer →
+              </button>
+            )}
           </form>
           {feedback === "wrong" && (
             <p className="wrong-feedback">Helaas, dat is niet goed. Probeer het nog eens!</p>
           )}
         </>
+      )}
+
+      {puzzleDone && (
+        <button className="btn-primary puzzle-continue-btn" type="button" onClick={onSolved}>
+          Verder →
+        </button>
       )}
     </div>
   );
