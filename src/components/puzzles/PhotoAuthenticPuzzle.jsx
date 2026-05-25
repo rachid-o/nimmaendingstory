@@ -55,6 +55,17 @@ export default function PhotoAuthenticPuzzle({ puzzle, onSolved }) {
         ))}
       </div>
 
+      {score !== null && !solved && (
+        <p className="pat-score">
+          Je hebt <strong>{score}</strong> van de {photos.length} goed!
+        </p>
+      )}
+      {solved && (
+        <p className="pa-check" style={{ fontSize: "1.2rem" }}>
+          🎉 Allemaal goed!
+        </p>
+      )}
+
       {!solved && (
         <button
           className="btn-primary"
@@ -64,18 +75,6 @@ export default function PhotoAuthenticPuzzle({ puzzle, onSolved }) {
         >
           Controleer →
         </button>
-      )}
-
-      {score !== null && !solved && (
-        <p className="pat-score">
-          Je hebt <strong>{score}</strong> van de {photos.length} goed!
-        </p>
-      )}
-
-      {solved && (
-        <p className="pa-check" style={{ fontSize: "1.2rem" }}>
-          🎉 Allemaal goed!
-        </p>
       )}
 
       {lightbox && (
