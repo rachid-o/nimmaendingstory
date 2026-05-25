@@ -1034,10 +1034,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   display: flex;
   align-items: center;
   padding-right: 6px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  min-width: 0;
+  word-break: break-word;
 }
 .lg-cell {
   height: var(--lg-cell-size);

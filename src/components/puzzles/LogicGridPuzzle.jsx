@@ -40,7 +40,7 @@ export default function LogicGridPuzzle({ puzzle, onSolved }) {
     }
   }
 
-  const gridStyle = { gridTemplateColumns: `clamp(60px, 15vw, 90px) repeat(${columns.length}, var(--lg-cell-size))` };
+  const gridStyle = { gridTemplateColumns: `clamp(80px, 22vw, 120px) repeat(${columns.length}, var(--lg-cell-size))` };
 
   return (
     <div className="puzzle-interactive">
