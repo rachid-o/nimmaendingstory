@@ -189,10 +189,31 @@ export const STOPS = [
     cheatCode: "k3p7",
     arrivalMessage: "Bijna aan het einde van jullie tocht! Café de Burgemeester is de laatste stop.\n\nNog één opdracht, en dan wacht de finale.",
     puzzle: {
-      type: "text",
-      question: "TODO Logica puzzel. Wat is 1 + 1?",
-      answer: "2",
-      hints: ["Het antwoord is een getal."],
+      type: "logic-grid",
+      question: "Gebruik ✓ (groen) voor een match, ✗ (rood) om iets uit te sluiten.",
+      clues: [
+        "Anouk dronk geen wijn, toen ze zich afvroeg wie J.W. Tilleman was.",
+        "Ruud stak ook z'n tong uit, maar zingen deed ie een andere keer.",
+        "Na te veel apekoppen lokten de pijlen jullie naar binnen.",
+        "De wijntjes bij de hoge bi bevallen goed!",
+        "Op de laatste avond bewonderden jullie Keith Richards.",
+        "De cocktailavond kwam voor de spelletjesavond.",
+      ],
+      columns: ["dansen", "karaoke", "spellen"],
+      rowGroups: [
+        { label: "dag",     rows: ["donderdag", "vrijdag", "zaterdag"] },
+        { label: "locatie", rows: ["tikibar", "café de kroeg", "de Burgemeester"] },
+        { label: "drank",   rows: ["wijn", "cocktail", "shotjes"] },
+      ],
+      // answer[groep][rij][kolom]: true = groene cel (match)
+      // donderdag=dansen, vrijdag=spellen, zaterdag=karaoke
+      // tikibar=dansen, café de kroeg=karaoke, de Burgemeester=spellen
+      // wijn=spellen, cocktail=dansen, shotjes=karaoke
+      answer: [
+        [[true,false,false],[false,false,true],[false,true,false]],
+        [[true,false,false],[false,true,false],[false,false,true]],
+        [[false,false,true],[true,false,false],[false,true,false]],
+      ],
     },
     completeMessage: "Dit was Café de Burgemeester. Op naar huis",
   },  

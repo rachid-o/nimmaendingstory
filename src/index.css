@@ -1002,3 +1002,61 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 .pat-choice-btn.pat-selected { background: var(--gold); border-color: var(--gold); color: #1a1209; font-weight: 700; }
 .pat-choice-btn:disabled { opacity: 0.5; cursor: default; }
 .pat-score { color: var(--gold); font-size: 1.1rem; text-align: center; margin-top: 4px; }
+
+/* LogicGridPuzzle */
+:root { --lg-cell-size: clamp(52px, 14vw, 72px); }
+.lg-clues { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-direction: column; gap: 7px; }
+.lg-clue { font-size: 0.88rem; color: var(--text-dim); padding-left: 14px; position: relative; line-height: 1.4; }
+.lg-clue::before { content: "—"; position: absolute; left: 0; }
+.lg-table { width: 100%; border-collapse: collapse; }
+.lg-header-row { display: grid; padding-bottom: 4px; }
+.lg-col-header {
+  font-size: 0.78rem;
+  color: var(--gold);
+  text-align: center;
+  padding: 2px 2px 6px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lg-group { border-top: 1.5px solid var(--gold-dim); padding-top: 2px; margin-bottom: 2px; }
+.lg-group-label {
+  font-size: 0.68rem;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 0 2px;
+}
+.lg-row { display: grid; }
+.lg-row-label {
+  font-size: 0.82rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  padding-right: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.lg-cell {
+  height: var(--lg-cell-size);
+  border: 1.5px solid var(--gold-dim);
+  background: var(--bg-card);
+  color: var(--text-dim);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  border-radius: 4px;
+  margin: 2px;
+}
+.lg-cell:hover:not(:disabled) { border-color: var(--gold); }
+.lg-cell.lg-yes { background: var(--green); border-color: var(--green); color: #fff; }
+.lg-cell.lg-no  { background: var(--red);   border-color: var(--red);   color: #fff; }
+.lg-cell:disabled { cursor: default; opacity: 0.75; }

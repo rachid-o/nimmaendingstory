@@ -5,6 +5,7 @@ import MultiQuestionPuzzle from "./puzzles/MultiQuestionPuzzle";
 import PhotoAnswerPuzzle from "./puzzles/PhotoAnswerPuzzle";
 import PhotoOrderPuzzle from "./puzzles/PhotoOrderPuzzle";
 import PhotoAuthenticPuzzle from "./puzzles/PhotoAuthenticPuzzle";
+import LogicGridPuzzle from "./puzzles/LogicGridPuzzle";
 import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
 
 
@@ -94,6 +95,8 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
         <PhotoOrderPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : puzzle.type === "photo-authentic" ? (
         <PhotoAuthenticPuzzle puzzle={puzzle} onSolved={onSolved} />
+      ) : puzzle.type === "logic-grid" ? (
+        <LogicGridPuzzle puzzle={puzzle} onSolved={onSolved} />
       ) : (
         <>
           <form className="answer-form" onSubmit={handleSubmit}>
