@@ -85,12 +85,6 @@ export default function LogicGridPuzzle({ puzzle, onSolved }) {
         ))}
       </div>
 
-      {!solved && (
-        <button className="btn-primary" type="button" onClick={handleCheck}>
-          Controleer →
-        </button>
-      )}
-
       {feedback === "wrong" && (
         <p className="wrong-feedback">Nog niet helemaal goed, probeer het nog eens!</p>
       )}
@@ -99,6 +93,12 @@ export default function LogicGridPuzzle({ puzzle, onSolved }) {
         <p className="pa-check" style={{ fontSize: "1.2rem" }}>
           🎉 Jullie hebben het opgelost!
         </p>
+      )}
+
+      {!solved && (
+        <button className="btn-primary" type="button" onClick={handleCheck}>
+          Controleer →
+        </button>
       )}
     </div>
   );

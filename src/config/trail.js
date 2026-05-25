@@ -187,7 +187,32 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "k3p7",
-    arrivalMessage: "Bijna aan het einde van jullie tocht! Café de Burgemeester is de laatste stop.\n\nNog één opdracht, en dan wacht de finale.",
+    arrivalMessage: `
+De donderdag is date night! Een mooie traditie.
+
+Eén keer was het zelfs zo gezellig, dat het een date driedaagse werd! Herinneren jullie dat nog?
+Vast niet, want door alle drank zijn jullie bijna alles vergeten...
+
+Een paar dingen weten jullie nog wel:
+- Jullie gingen drie dagen na elkaar uit.
+- Elke dag deden jullie een drankje in een cafe en vervolgens een activiteit op een andere locatie
+- Het drankje, het cafe en de activiteit op locatie waren elke dag anders.
+
+Maar dit is nog niet genoeg om de alles te kunnen reconstrueren.
+Gelukkig komen er nog meer herinneringen terug nu jullie op locatie zijn.
+
+Tips:
+- Alleen logisch nadenken is niet genoeg. Kijk ook heel goed om jullie heen, om jullie herinneringen te kunnen plaatsen.
+- Bekijk eerst alle aanwijzingen. Het antwoordoverzicht vul je het makkelijkste in door de aanwijzingen op volgorde af te gaan. Maak aantekeningen als je iets vindt wat je lastig in kunt vullen.
+- Onthoud goed waar jullie deze activiteiten deden: 
+   - Dansen bij Dollars
+   -  Karaoke bij Roxy's 
+   -  Spellen bij de Witte Raaf
+
+Wil je dit nog even nalezen als de puzzel is gestart? Klik dan op Instructies.
+
+Veel succes!    
+    `,
     puzzle: {
       type: "logic-grid",
       question: "Gebruik ✓ (groen) voor een match, ✗ (rood) om iets uit te sluiten.",
