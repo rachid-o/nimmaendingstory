@@ -245,7 +245,7 @@ Veel succes!
         "Ruud stak ook z'n tong uit, maar zingen deed ie een andere keer.",
         "Na te veel apekoppen lokten de pijlen jullie naar binnen.",
         "De wijntjes bij de hoge bi bevallen goed!",
-        "Op de laatste avond bewonderden jullie Keith Richards.",
+        "Op de laatste avond bewonderden jullie Keith Haring.",
         "De cocktailavond kwam voor de spelletjesavond.",
       ],
       columns: ["dansen", "karaoke", "spellen"],
