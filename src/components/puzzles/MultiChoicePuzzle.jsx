@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function MultiChoicePuzzle({ puzzle, onSolved }) {
   const { questions } = puzzle;
   const [selections, setSelections] = useState(Array(questions.length).fill(null));
-  const [results, setResults] = useState(null);
+  const [history, setHistory] = useState([]);
   const [solved, setSolved] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -11,14 +11,13 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
     const next = [...selections];
     next[qi] = letter;
     setSelections(next);
-    if (results) setResults(null);
     setOpenIndex(null);
   }
 
   function handleCheck() {
-    const res = questions.map((q, i) => selections[i] === q.answer);
-    setResults(res);
-    if (res.every(Boolean)) {
+    const correct = questions.filter((q, i) => selections[i] === q.answer).length;
+    setHistory(prev => [{ selections: [...selections], correct }, ...prev]);
+    if (correct === questions.length) {
       setSolved(true);
       setTimeout(onSolved, 800);
     }
@@ -30,28 +29,20 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
   return (
     <div className="puzzle-interactive">
       <div className="mc-list">
-        {questions.map((q, i) => {
-          const resultClass = results ? (results[i] ? " mc-correct" : " mc-wrong") : "";
-          return (
-            <div key={i} className={`mc-item${resultClass}`}>
-              <button
-                type="button"
-                className="mc-question-btn"
-                onClick={() => setOpenIndex(i)}
-                disabled={solved}
-              >
-                <span className="mc-num">Vraag {i + 1}</span>
-                <span className="mc-selection">{selections[i] ?? "—"}</span>
-                {results && (
-                  <span className={`mq-result-icon${results[i] ? " correct" : " wrong"}`}>
-                    {results[i] ? "✓" : "✗"}
-                  </span>
-                )}
-                <span className="mc-arrow">›</span>
-              </button>
-            </div>
-          );
-        })}
+        {questions.map((q, i) => (
+          <div key={i} className="mc-item">
+            <button
+              type="button"
+              className="mc-question-btn"
+              onClick={() => setOpenIndex(i)}
+              disabled={solved}
+            >
+              <span className="mc-num">Vraag {i + 1}</span>
+              <span className="mc-selection">{selections[i] ?? "—"}</span>
+              <span className="mc-arrow">›</span>
+            </button>
+          </div>
+        ))}
       </div>
 
       {!solved && (
@@ -69,6 +60,26 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
         <p className="pa-check" style={{ fontSize: "1.2rem" }}>
           🎉 Alle antwoorden kloppen!
         </p>
+      )}
+
+      {history.length > 0 && (
+        <div className="mm-history">
+          {history.map((entry, i) => (
+            <div key={i} className="mm-history-row">
+              <div className="mm-result-dots">
+                {Array(entry.correct).fill(null).map((_, j) => (
+                  <span key={`b${j}`} className="mm-bull" />
+                ))}
+                {Array(questions.length - entry.correct).fill(null).map((_, j) => (
+                  <span key={`m${j}`} className="mm-miss" />
+                ))}
+              </div>
+              <span className="mm-history-label">
+                {entry.correct} van de {questions.length} goed
+              </span>
+            </div>
+          ))}
+        </div>
       )}
 
       {openQ && (

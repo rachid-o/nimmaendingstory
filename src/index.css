@@ -1076,8 +1076,6 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 }
 .mc-question-btn:active { opacity: 0.8; }
 .mc-question-btn:disabled { opacity: 0.6; cursor: default; }
-.mc-item.mc-correct .mc-question-btn { border-color: var(--green); }
-.mc-item.mc-wrong   .mc-question-btn { border-color: var(--red); }
 .mc-num  { font-family: 'Cinzel', serif; font-size: 0.85rem; color: var(--gold); white-space: nowrap; }
 .mc-selection { flex: 1; font-weight: 700; font-size: 1rem; color: var(--text); }
 .mc-arrow { color: var(--gold-dim); font-size: 1.3rem; line-height: 1; }
