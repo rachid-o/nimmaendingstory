@@ -11,7 +11,6 @@ import FinalScreen from "./components/FinalScreen";
 import RefreshButton from "./components/RefreshButton";
 import ResetButton from "./components/ResetButton";
 import FwButton from "./components/FwButton";
-import TipsButton from "./components/TipsButton";
 import TestButton from "./components/TestButton";
 import TestScreen from "./components/TestScreen";
 import { STOPS, FINAL } from "./config/trail";
@@ -108,7 +107,7 @@ export default function App() {
     <>
       <RefreshButton />
       <ResetButton />
-      <TipsButton />
+      {/* <TipsButton /> */}
       {showSkip && screen === "navigate" && validStop && (
         <FwButton onFw={handleArrived} />
       )}
