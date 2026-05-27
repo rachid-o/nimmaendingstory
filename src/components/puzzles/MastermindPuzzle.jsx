@@ -138,7 +138,7 @@ export default function MastermindPuzzle({ puzzle, onSolved }) {
                 ))}
               </div>
               <span className="mm-history-label">
-                {entry.bulls} goed · {entry.cows} bijna
+                {entry.bulls} goed · {entry.cows} verkeerde plek
               </span>
             </div>
           ))}

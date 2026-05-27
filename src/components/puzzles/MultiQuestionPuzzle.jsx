@@ -8,7 +8,7 @@ export default function MultiQuestionPuzzle({ puzzle, onSolved }) {
 
   function isCorrect(input, answers) {
     const trimmed = input.trim().toLowerCase();
-    return answers.some(a => a.toLowerCase() === trimmed);
+    return answers.some(a => trimmed.includes(a.toLowerCase()));
   }
 
   function handleCheck() {

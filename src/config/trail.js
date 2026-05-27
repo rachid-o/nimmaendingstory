@@ -70,10 +70,10 @@ export const STOPS = [
     arrivalMessage: "Jullie staan op het Erasmusplein. ",
     puzzle: {
       type: "multi",
-      question: "Beantwoord de vragen bij de muurschilderingen.",
+      question: "Beantwoord de vragen bij de muurschilderingen. Blijf op het Erasmusplein (niet voorbij cultuur cafe of spar lopen)",
       questions: [
         { question: "Wie heeft je rug?", answers: ["de spar", "spar"] },
-        { question: "Wat moet je doen?", answers: ["iets dat er toe doet", "er toe doet", "ertoe doet"] },
+        { question: "Wat moet je doen?", answers: ["iets dat er toe doet", "er toe doet", "ertoe doet", "er toe doen", "ertoe doen", "toe doe"] },
         { question: "Wie denkt anders dan ze doen?", answers: ["volt"] },
         { question: "Wat is voor elkaar?", answers: ["rookvrij terrein", "rookvrij"] },
       ],
