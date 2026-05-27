@@ -10,7 +10,7 @@ export default function PhotoQuizPuzzle({ puzzle, onSolved }) {
   function normalize(s) { return s.trim().toLowerCase().replace(/\./g, ""); }
 
   function handleCheck() {
-    const res = photos.map((p, i) => normalize(inputs[i]) === normalize(p.answer));
+    const res = photos.map((p, i) => normalize(inputs[i]).includes(normalize(p.answer)));
     setResults(res);
     if (res.every(Boolean)) {
       setSolved(true);
