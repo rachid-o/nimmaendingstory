@@ -19,8 +19,8 @@
 }
 
 html {
-  /* Enkele bron van waarheid: 1rem = deze waarde. Alle andere fonts in rem. */
-  font-size: clamp(19px, 5.5vw, 23px);
+  /* Vaste basis zodat rem consistent is op alle apparaten, ongeacht viewport of systeemschaal. */
+  font-size: 18px;
 }
 
 html, body, #root {
