@@ -66,6 +66,11 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
         <div className="mm-history">
           {history.map((entry, i) => (
             <div key={i} className="mm-history-row">
+              <div className="mm-history-guess">
+                {entry.selections.map((sel, j) => (
+                  <span key={j} className="mm-history-cell">{sel}</span>
+                ))}
+              </div>
               <div className="mm-result-dots">
                 {Array(entry.correct).fill(null).map((_, j) => (
                   <span key={`b${j}`} className="mm-bull" />
