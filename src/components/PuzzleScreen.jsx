@@ -7,6 +7,7 @@ import PhotoOrderPuzzle from "./puzzles/PhotoOrderPuzzle";
 import PhotoAuthenticPuzzle from "./puzzles/PhotoAuthenticPuzzle";
 import LogicGridPuzzle from "./puzzles/LogicGridPuzzle";
 import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
+import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
 
 
 export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose }) {
@@ -100,6 +101,8 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
         <PhotoOrderPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "photo-authentic" ? (
         <PhotoAuthenticPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
+      ) : puzzle.type === "multi-choice" ? (
+        <MultiChoicePuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : puzzle.type === "logic-grid" ? (
         <LogicGridPuzzle puzzle={puzzle} onSolved={handlePuzzleSolved} />
       ) : (

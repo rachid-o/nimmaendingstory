@@ -52,14 +52,38 @@ export const STOPS = [
     cheatCode: "c5h6",
     arrivalMessage: "Welkom bij Café Hop en Heivuur! Een gezellige plek voor een quiz",
     puzzle: {
-      type: "mastermind",
-      question: "Kraken jullie de code?",
-      slots: 5,
-      options: ["A", "B", "C", "D", "E", "F"],
-      code: [0, 1, 2, 3, 4],
+      type: "multi-choice",
+      question: "Beantwoord de 5 vragen.",
+      questions: [
+        {
+          question: "Vraag 1?",
+          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          answer: "A",
+        },
+        {
+          question: "Vraag 2?",
+          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          answer: "B",
+        },
+        {
+          question: "Vraag 3?",
+          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          answer: "C",
+        },
+        {
+          question: "Vraag 4?",
+          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          answer: "D",
+        },
+        {
+          question: "Vraag 5?",
+          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          answer: "E",
+        },
+      ],
     },
     completeMessage: "Dit was Café Hop en Heivuur. Op naar de volgende stop.",
-  },
+  }, 
   {
     name: "Erasmusplein",
     lat: 51.819329,
@@ -72,8 +96,8 @@ export const STOPS = [
       type: "multi",
       question: "Beantwoord de vragen bij de muurschilderingen. Blijf op het Erasmusplein (niet voorbij cultuur cafe of spar lopen)",
       questions: [
-        { question: "Wie heeft je rug?", answers: ["de spar", "spar"] },
-        { question: "Wat moet je doen?", answers: ["iets dat er toe doet", "er toe doet", "ertoe doet", "er toe doen", "ertoe doen", "toe doe"] },
+        { question: "Wat mag alleen hier in?'", answers: ["krant"] },
+        { question: "Wat moet je doen?", answers: ["toe doe"] },
         { question: "Wie denkt anders dan ze doen?", answers: ["volt"] },
         { question: "Wat is voor elkaar?", answers: ["rookvrij terrein", "rookvrij"] },
       ],
