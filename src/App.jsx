@@ -111,6 +111,9 @@ export default function App() {
       {showSkip && screen === "navigate" && validStop && (
         <FwButton onFw={handleArrived} />
       )}
+      {showSkip && screen === "final" && !finalArrived && (
+        <FwButton onFw={handleFinalArrived} />
+      )}
       {debugMode && <TestButton onClick={() => setShowTest(true)} />}
       {showTest && (
         <TestScreen
