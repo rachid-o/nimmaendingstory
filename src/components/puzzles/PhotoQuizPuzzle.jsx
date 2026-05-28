@@ -7,7 +7,7 @@ export default function PhotoQuizPuzzle({ puzzle, onSolved }) {
   const [solved, setSolved] = useState(false);
   const [lightbox, setLightbox] = useState(null);
 
-  function normalize(s) { return s.trim().toLowerCase().replace(/\./g, ""); }
+  function normalize(s) { return s.trim().toLowerCase().replace(/[\s\-\.]/g, ""); }
 
   function handleCheck() {
     const res = photos.map((p, i) => normalize(inputs[i]).includes(normalize(p.answer)));
