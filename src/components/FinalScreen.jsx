@@ -53,7 +53,6 @@ export default function FinalScreen({ arrived, onArrived }) {
           )}
         </div>
         <img src={catUrl} alt="Een lieve kat voor jullie" className="cat-reward" />
-        <div className="final-hearts">❤️ ❤️ ❤️</div>
       </div>
     );
   }
