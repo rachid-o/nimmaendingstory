@@ -1004,7 +1004,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 .pat-score { color: var(--gold); font-size: 1.1rem; text-align: center; margin-top: 4px; }
 
 /* LogicGridPuzzle */
-:root { --lg-cell-size: clamp(104px, 28vw, 144px); }
+:root { --lg-cell-size: clamp(70px, 15vw, 124px); }
 .lg-clues { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-direction: column; gap: 7px; }
 .lg-clue { font-size: 0.88rem; color: var(--text-dim); padding-left: 14px; position: relative; line-height: 1.4; }
 .lg-clue::before { content: "—"; position: absolute; left: 0; }
