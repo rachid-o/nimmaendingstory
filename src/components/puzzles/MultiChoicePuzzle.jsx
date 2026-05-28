@@ -98,7 +98,7 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
                 ))}
               </div>
               <span className="mm-history-label">
-                {entry.bulls} goed · {entry.cows} verkeerde plek
+                {entry.bulls} goed <br />{entry.cows} verkeerde plek
               </span>
             </div>
           ))}
