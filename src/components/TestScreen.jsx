@@ -1,19 +1,6 @@
 import { STOPS, FINAL } from "../config/trail";
 
-const TEST_PUZZLES = [
-  {
-    label: "📷 Foto-antwoord",
-    puzzle: {
-      type: "photo-answer",
-      question: "Wat staat er op elke foto? (antwoorden: natuur / stad)",
-      photos: [
-        { url: "https://picsum.photos/id/15/400/300", answer: "natuur" },
-        { url: "https://picsum.photos/id/42/400/300", answer: "stad" },
-      ],
-      hints: [],
-    },
-  },
-];
+const TEST_PUZZLES = [];
 
 export default function TestScreen({ onSelectStop, onSelectFinal, onClose, onPreviewPuzzle }) {
   return (
@@ -40,25 +27,7 @@ export default function TestScreen({ onSelectStop, onSelectFinal, onClose, onPre
           </li>
         </ul>
 
-        {onPreviewPuzzle && (
-          <div className="test-puzzle-section">
-            <h4>Nieuwe puzzeltypen testen</h4>
-            <ul className="test-stop-list">
-              {TEST_PUZZLES.map((item, i) => (
-                <li key={i}>
-                  <button
-                    className="test-puzzle-btn"
-                    onClick={() => onPreviewPuzzle(item.puzzle)}
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        <button className="btn-secondary" onClick={onClose}>Sluiten</button>
+<button className="btn-secondary" onClick={onClose}>Sluiten</button>
       </div>
     </div>
   );
