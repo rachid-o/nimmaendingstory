@@ -142,6 +142,7 @@ export const STOPS = [
         { url: `${import.meta.env.BASE_URL}filmquiz/7.jpg`, answer: "Madagascar" },
         { url: `${import.meta.env.BASE_URL}filmquiz/8.jpg`, answer: "Neverending Story" },
       ],
+      hints: ["hint 1", "hint 2"],
     },
     completeMessage: "Dat was LUX!",
   },
