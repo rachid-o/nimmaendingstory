@@ -98,7 +98,7 @@ export const STOPS = [
       type: "multi",
       question: "Beantwoord de vragen bij de muurschilderingen. Blijf op het Erasmusplein (niet voorbij cultuur cafe of spar lopen)",
       questions: [
-        { question: "Wat mag alleen hier in?'", answers: ["krant"] },
+        { question: "Wat mag alleen hier in?", answers: ["krant"] },
         { question: "Wat moet je doen?", answers: ["toe doe"] },
         { question: "Wie denkt anders dan ze doen?", answers: ["volt"] },
         { question: "Wat is voor elkaar?", answers: ["rookvrij terrein", "rookvrij"] },
