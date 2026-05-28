@@ -135,10 +135,10 @@ export const STOPS = [
       photos: [
         { url: `${import.meta.env.BASE_URL}filmquiz/1.jpg`, answer: "Lion King" },
         { url: `${import.meta.env.BASE_URL}filmquiz/2.jpg`, answer: "Terminator" },
-        { url: `${import.meta.env.BASE_URL}filmquiz/3.jpg`, answer: "Life of Pie" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/3.jpg`, answer: "Life of Pi" },
         { url: `${import.meta.env.BASE_URL}filmquiz/4.jpg`, answer: "Godzilla" },
         { url: `${import.meta.env.BASE_URL}filmquiz/5.jpg`, answer: "E.T." },
-        { url: `${import.meta.env.BASE_URL}filmquiz/6.jpg`, answer: "The shining" },
+        { url: `${import.meta.env.BASE_URL}filmquiz/6.jpg`, answer: "shining" },
         { url: `${import.meta.env.BASE_URL}filmquiz/7.jpg`, answer: "Madagascar" },
         { url: `${import.meta.env.BASE_URL}filmquiz/8.jpg`, answer: "Neverending Story" },
       ],
