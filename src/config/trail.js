@@ -279,6 +279,7 @@ export const FINAL = {
   lat: 51.8376845,
   lng: 5.8325001,
   arrivalRadius: 5,
+  hints: ["Hint 1", "Hint 2"],
   title: "Jullie zijn er! 🥂",
   message:
     "20 jaar geleden begon het mooiste avontuur van jullie leven. Bedankt dat jullie samen zo'n inspirerend stel zijn.\n\nGefeliciteerd met jullie jubileum!",

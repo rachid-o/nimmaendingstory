@@ -15,6 +15,9 @@ export default function FinalScreen({ arrived, onArrived }) {
   const { heading, permissionNeeded, requestPermission } = useCompass();
   const prevRotationRef = useRef(null);
   const [catUrl] = useState(() => randomCatUrl());
+  const hints = FINAL.hints ?? [];
+  const [hintsShown, setHintsShown] = useState(0);
+  const [showHintOverlay, setShowHintOverlay] = useState(false);
 
   const distance = position
     ? haversineDistance(position.lat, position.lng, FINAL.lat, FINAL.lng)
@@ -90,6 +93,36 @@ export default function FinalScreen({ arrived, onArrived }) {
           <p className="loading-text">GPS bepalen…</p>
         )}
       </div>
+
+      {hints.length > 0 && (
+        <button className="btn-hint" onClick={() => { if (hintsShown === 0) setHintsShown(1); setShowHintOverlay(true); }}>
+          💡 {hintsShown === 0 ? "Hint tonen" : "Hints bekijken"}
+        </button>
+      )}
+
+      {showHintOverlay && (
+        <div className="confirm-overlay" onClick={() => setShowHintOverlay(false)}>
+          <div className="confirm-dialog hint-overlay-dialog" onClick={e => e.stopPropagation()}>
+            <p className="hint-overlay-title">💡 {hints.length > 1 ? "Hints" : "Hint"}</p>
+            <div className="hint-overlay-list">
+              {hints.slice(0, hintsShown).map((text, i) => (
+                <div className="hint-box" key={i}>
+                  {hints.length > 1 && <span className="hint-label">Hint {i + 1}</span>}
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+            {hintsShown < hints.length && (
+              <button className="btn-hint" onClick={() => setHintsShown(n => n + 1)}>
+                💡 Volgende hint
+              </button>
+            )}
+            <button className="btn-secondary" onClick={() => setShowHintOverlay(false)}>
+              Sluiten
+            </button>
+          </div>
+        </div>
+      )}
 
     </div>
   );
