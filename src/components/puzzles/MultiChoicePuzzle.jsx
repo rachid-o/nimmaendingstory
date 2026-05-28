@@ -1,5 +1,20 @@
 import { useState } from "react";
 
+function scoreSelections(selections, questions) {
+  let bulls = 0;
+  const selRem = [];
+  const ansRem = [];
+  for (let i = 0; i < questions.length; i++) {
+    if (selections[i] === questions[i].answer) bulls++;
+    else { selRem.push(selections[i]); ansRem.push(questions[i].answer); }
+  }
+  let cows = 0;
+  const cnt = {};
+  for (const v of ansRem) cnt[v] = (cnt[v] || 0) + 1;
+  for (const v of selRem) { if (cnt[v] > 0) { cows++; cnt[v]--; } }
+  return { bulls, cows };
+}
+
 export default function MultiChoicePuzzle({ puzzle, onSolved }) {
   const { questions } = puzzle;
   const [selections, setSelections] = useState(Array(questions.length).fill(null));
@@ -15,9 +30,9 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
   }
 
   function handleCheck() {
-    const correct = questions.filter((q, i) => selections[i] === q.answer).length;
-    setHistory(prev => [{ selections: [...selections], correct }, ...prev]);
-    if (correct === questions.length) {
+    const { bulls, cows } = scoreSelections(selections, questions);
+    setHistory(prev => [{ selections: [...selections], bulls, cows }, ...prev]);
+    if (bulls === questions.length) {
       setSolved(true);
       setTimeout(onSolved, 800);
     }
@@ -72,15 +87,18 @@ export default function MultiChoicePuzzle({ puzzle, onSolved }) {
                 ))}
               </div>
               <div className="mm-result-dots">
-                {Array(entry.correct).fill(null).map((_, j) => (
+                {Array(entry.bulls).fill(null).map((_, j) => (
                   <span key={`b${j}`} className="mm-bull" />
                 ))}
-                {Array(questions.length - entry.correct).fill(null).map((_, j) => (
+                {Array(entry.cows).fill(null).map((_, j) => (
+                  <span key={`c${j}`} className="mm-cow" />
+                ))}
+                {Array(questions.length - entry.bulls - entry.cows).fill(null).map((_, j) => (
                   <span key={`m${j}`} className="mm-miss" />
                 ))}
               </div>
               <span className="mm-history-label">
-                {entry.correct} van de {questions.length} goed
+                {entry.bulls} goed · {entry.cows} verkeerde plek
               </span>
             </div>
           ))}

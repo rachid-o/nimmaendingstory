@@ -1011,7 +1011,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 .lg-table { width: 100%; border-collapse: collapse; overflow-x: auto; }
 .lg-header-row { display: grid; padding-bottom: 4px; }
 .lg-col-header {
-  font-size: 0.82rem;
+  font-size: 0.7rem;
   color: var(--gold);
   text-align: center;
   padding: 2px 4px 6px;
