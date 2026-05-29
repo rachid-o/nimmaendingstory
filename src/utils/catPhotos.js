@@ -1,12 +1,12 @@
 const filenames = [
-  "signal-2026-05-17-124050.jpg",
-  "signal-2026-05-17-124107.jpg",
-  "signal-2026-05-17-124125.jpg",
-  "signal-2026-05-17-124150.jpg",
-  "signal-2026-05-17-124218.jpg",
-  "signal-2026-05-17-124237.jpg",
-  "signal-2026-05-17-124321.jpg",
-  "signal-2026-05-17-124409.jpg",
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg",
 ];
 
 export function randomCatUrl() {

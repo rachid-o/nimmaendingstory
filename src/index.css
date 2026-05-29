@@ -370,7 +370,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   text-align: center;
   font-family: 'Lato', sans-serif;
   transition: border-color 0.2s;
-  width: 100%;
+  width: 80%;
 }
 .answer-input:focus { outline: none; border-color: var(--gold); }
 .answer-input.input-wrong { border-color: var(--red); animation: shake 0.4s ease; }
