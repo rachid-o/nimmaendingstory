@@ -1,11 +1,10 @@
-import { useState } from "react";
 import { STOPS } from "../config/trail";
-import { randomCatUrl } from "../utils/catPhotos";
+import { catUrlForStop } from "../utils/catPhotos";
 
 export default function StopCompleteScreen({ stopIndex, onNext }) {
   const stop = STOPS[stopIndex];
   const isLastStop = stopIndex === STOPS.length - 1;
-  const [catUrl] = useState(() => stop.showCat ? randomCatUrl() : null);
+  const catUrl = stop.showCat ? catUrlForStop(stopIndex) : null;
 
   return (
     <div className="screen stop-complete-screen">
