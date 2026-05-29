@@ -9,7 +9,6 @@ export default function ArrivalScreen({ stopIndex, onStart }) {
       <div className="stop-badge">
         Stop {stopIndex + 1} / {STOPS.length}
       </div>
-      <div className="arrival-icon">📍</div>
       <h2 className="arrival-name">{stop.name}</h2>
       <div className="arrival-message">
         <p>{message}</p>
