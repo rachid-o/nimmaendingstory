@@ -8,7 +8,6 @@ export default function StopCompleteScreen({ stopIndex, onNext }) {
 
   return (
     <div className="screen stop-complete-screen">
-      <div className="complete-icon">🏆</div>
       <h2>{stop.completeMessage}</h2>
 
       {catUrl && (
