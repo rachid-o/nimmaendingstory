@@ -20,7 +20,7 @@
 
 html {
   /* Vaste basis zodat rem consistent is op alle apparaten, ongeacht viewport of systeemschaal. */
-  font-size: 18px;
+  font-size: 16px;
 }
 
 html, body, #root {
