@@ -8,11 +8,16 @@ export const PIN = "2006";
 export const DEBUG_PIN = "12369874";
 
 export const WELCOME = {
-  title: "20 Jaar Samen! 🗺️",
+  title: "The Nimma Ending Story!",
   message:
-    "Lieve avonturiers,\n\nVandaag gaan jullie op pad langs plekken die er toe doen. Volg het kompas, los puzzels op.\n\n"
-    + "Neem fiets, pen en papier mee. Laat ons weten wanneer je gaat > hulplijn bellen\n"
-    + "De route fietsen duurt 45 minuten. Je kunt elke dag gaan, zolang het licht is.\n\n"
+    "Lieve Anouk en Ruud,\n\nJullie quest voert jullie langs niet-exotische locaties, waar jullie zonder gevaar voor eigen leven onbelangrijke opdrachten dienen te vervullen. Volg het kompas om de eerste locatie te vinden.\n\n"
+    + "BELANGRIJK:\n"
+    + "Het kompas moet in het begin kalibreren. Het kan dan de verkeerde richting op wijzen of minder nauwkeurig zijn.\n"
+    + "Loop eerst een tiental meters MET DE APP OPEN OP HET SCHERM. Eenmaal gekalibreerd blijft het kompas werken. Jullie hoeven dit dus alleen voor de eerste locatie te doen.\n"
+    + "Vanaf dat moment hoef je de app niet continu open te hebben om batterij te besparen.\n"
+    + "Onder het kompas staat hoe ver de locatie is. De afstand is vanaf het begin nauwkeurig. Wordt de afstand groter, dan lopen jullie de verkeerde kant op.\n"
+    + "Hoe dichter jullie bij jullie doel zijn, hoe nauwkeuriger het kompas wordt.\n\n"
+    + "Opent de locatie niet, terwijl jullie wel goed zitten, dan kunnen jullie bij ons een noodcode opvragen om de opdracht te openen.\n\n"
     + "Veel plezier en succes!",
   photo: null, // Zet hier het pad naar een foto, bijv. "/photo.jpg"
 };
@@ -25,10 +30,16 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "r2e9",
-    arrivalMessage: "Jullie staan voor nummer 89. Een adres dat voor altijd een plekje in jullie hart heeft.\n\nDe tijd vliegt voorbij — maar herinneringen blijven.",
+    arrivalMessage: "De tijd vliegt!\n\n Deze Vos verliest noch zn haren, noch zn streken. En ook Anouk ziet er niet 20 jaar ouder uit. Dat kan de eerste opdracht wel eens wat lastiger maken...\n\n"
+      + "Zet de foto's in de juiste volgorde. Begin met de oudste foto en eindig met de meest recente.\n"
+      + "Je krijgt te zien hoeveel antwoorden je goed hebt.\n"
+      + "Klik op de foto om te vergroten.Klik nog een keer om het weer te verkleinen.\n\n"
+      + "Komen jullie er niet uit?\n"
+      + "Onder 'Hint tonen' staat op willekeurige volgorde bij welke gelegenheden de foto's zijn genomen\n",
+     
     puzzle: {
       type: "photo-order",
-      question: "Zet de foto's in de juiste chronologische volgorde.\n\nKlik op de foto om te vergroten. Klik nog een keer om het weer te verkleinen",
+      question: "Zet de foto's in de juiste chronologische volgorde van oudste naar meest recent.\n\n",
       photos: [
         { label: "A", url: `${import.meta.env.BASE_URL}tijdvliegt/A.jpg` },
         { label: "B", url: `${import.meta.env.BASE_URL}tijdvliegt/B.jpg` },
@@ -40,9 +51,9 @@ export const STOPS = [
         { label: "H", url: `${import.meta.env.BASE_URL}tijdvliegt/H.jpg` },
       ],
       answer: "GECAFHBD",
-      hints: ["hint 1", "hint 2"],
+      hints: ["2x Weekendje weg; Carnaval Escharen; Verjaardag Anouk; Efteling; Vrijgezellenweekend; Kunstnacht; Maffiafeest"],
     },
-    completeMessage: "Dit was de Tijgerstraat! Op naar de volgende stop.",
+    completeMessage: "Dit was de Tijgerstraat! \n\n Op juiste volgorde: Maffiafeest (2006), Carnaval Escharen (2008), Efteling (2009), Kunstnacht (2014), Weekendje (2019), Verjaardag Anouk (2020), Vrijgezellenweekendje (2021), Weekendje (2025).\n\n Hierbij een heel oude foto van Henk en Hobbes als beloning.\n Op naar de volgende stop.",
   },
   {
     name: "Café Hop en Heivuur",
@@ -51,40 +62,40 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
-    arrivalMessage: "Welkom bij Café Hop en Heivuur! Een gezellige plek voor een quiz",
+    arrivalMessage: "Beste backwards talking roze dwergzebra's,\n\n Het ergens op de wereld klokslag 20:00, dus we gaan beginnen met de Porseleinen Pubquiz. En zoals gewoonlijk wordt het weer vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen./n/n Meedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
-      question: "Beantwoord de 5 vragen.",
+      question: "Jullie mogen zo vaak raden als je wilt. De categoriën zijn: 1. Cultuur, 2. Geschiedenis, 3. Wetenschap, 4. Muziek en 5. Thuis. Succes!",
       questions: [
         {
-          question: "Vraag 1?",
-          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
-          answer: "A",
-        },
-        {
-          question: "Vraag 2?",
-          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          question: "Hoe wordt een porseleinen huwelijk ook wel genoemd?",
+          options: ["Koperen huwelijk", "Kristallen huwelijk", "Zilveren huwelijk", "Houten huwelijk", "Aardewerken huwelijk", "Eiken huwelijk"],
           answer: "B",
         },
         {
-          question: "Vraag 3?",
-          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
-          answer: "C",
-        },
-        {
-          question: "Vraag 4?",
-          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          question: "Wanneer begon de productie van porselein in Europa?",
+          options: ["15e eeuw", "16e eeuw", "17e eeuw", "18e eeuw", "19e eeuw", "20e eeuw"],
           answer: "D",
         },
         {
-          question: "Vraag 5?",
-          options: ["Optie A", "Optie B", "Optie C", "Optie D", "Optie E", "Optie F"],
+          question: "Welke grondstof is essentieel voor de productie van porselein?",
+          options: ["Bentoniet", "Porfier", "Kalksteen", "Chamotte", "Kaolien", "Zand"],
+          answer: "E",
+        },
+        {
+          question: "Welke artiest heeft GEEN nummer met porselein in de titel?",
+          options: ["The National", "Moby", "Baxter Dury", "Courtney Barnett", "Sef", "Red Hot Chili Peppers"],
+          answer: "A",
+        },
+        {
+          question: "Welke beeldjes kwamen op bezoek?",
+          options: ["2 kleuters, 4 dwergen en een duif", "3 honden, een varken en 2 clowns", "6 dwergen, een Buddha en een schildpad", "Een olifant, 5 honden en een theepot", "5 dwergen, een aap en een koe ", "Een katje, 4 honden en een paard"],
           answer: "E",
         },
       ],
-      hints: ["hint 1", "hint 2"],
+      hints: ["Dit is een variant op Mastermind. Belangrijk: de bolletjes geven alleen aan hoeveel antwoorden jullie goed hebben of op de verkeerde plek staan, maar ze geven niet aan om WELKE antwoorden het gaat. Tip als het te lastig is: vul eerst bij alle vragen antwoord A in. Kijk hoeveel er goed zijn. Doe vervolgens hetzelfde voor antwoord B, antwoord C, etc. Op die manier kun je achterhalen welke letters in het goede antwoord zitten."],
     },
-    completeMessage: "Dit was Café Hop en Heivuur. Op naar de volgende stop.",
+    completeMessage: "Dit was Café Hop en Heivuur. Goed gedaan: jullie zijn slimmer dan Hobbes met een cone om haar nek! Op naar de volgende stop.",
   }, 
   {
     name: "Erasmusplein",
@@ -93,19 +104,18 @@ export const STOPS = [
     arrivalRadius: 15,
     showCat: true,
     cheatCode: "8ks4",
-    arrivalMessage: "Jullie staan op het Erasmusplein. ",
+    arrivalMessage: "De Radboud Universiteit: hier hebben jullie meer dan genoeg tijd doorgebracht. Het heeft wel twee slimmerikken opgeleverd die kritisch nadenken en overal een antwoord op hebben. Weten jullie ook het antwoord te vinden op de volgende vragen?",
     puzzle: {
       type: "multi",
-      question: "Beantwoord de vragen bij de muurschilderingen. Blijf op het Erasmusplein (niet voorbij cultuur cafe of spar lopen)",
+      question: "Tip! Blijf op het Erasmusplein; ga niet niet voorbij Cultuurcafé of de Spar.",
       questions: [
         { question: "Wat mag alleen hier in?", answers: ["krant"] },
         { question: "Wat moet je doen?", answers: ["toe doe"] },
         { question: "Wie denkt anders dan ze doen?", answers: ["volt"] },
         { question: "Wat is voor elkaar?", answers: ["rookvrij terrein", "rookvrij"] },
       ],
-      hints: ["hint 1", "hint 2"],
     },
-    completeMessage: "Dit was het Erasmusgebouw.",
+    completeMessage: "Dit was het Erasmusgebouw! Op naar de volgende stop.",
   },
   {
     name: "RSC",
@@ -114,15 +124,15 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "b9x4",
-    arrivalMessage: "Hier is het RSC.",
+    arrivalMessage: "Reis je rot!\n\n Van USA tot India, van Luxemburg tot Japan. Van veilig in een vliegtuig, bus en trein tot ongelukjes in huurauto's: jullie reizen flink wat af.\n\n Jullie reis begon bij ANS, maar hoe gaan jullie eindigen?\n\n Opdracht: \n- Jullie gaan zo meteen een reis maken door van plek naar plek te lopen. \n- Alleen verenigingen/organisatie tellen als locatie/plek/plaats. \n- Tussendoor maken jullie 5 tussenstops. \n- Volg de routebeschrijving om de juiste locaties te vinden. \n- Jullie starten bij ANS. \n\nDit zijn de reislocaties van rechts naar links: \nANS, Dance fever, MSV, AIESEC, ESN, SOFV, RAGweek, NSSR, Akku, United Netherlands, FNV, VOX. \nVoorbeeld: vanuit FNV 1 plek naar links is naar Vox. ",
     puzzle: {
       type: "text",
-      question: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum" 
-      +"\n\nHoe eindigt jullie reis?",
+      question: "Routebeschrijving:\n- Start bij ANS. Ga op bezoek bij de man die zijn schoen mist. Loop vervolgens 1 locatie met hem mee. Dit is tussenstop 1.\n- Start bij tussenstop 1. Hoeveel G's zitten er in de volledige naam? Loop dat aantal verenigingen naar rechts. Is het logo blauw? Ga dan 4 verenigingen naar links. Is het groen, ga dan 7 verenigingen naar links. Dit is tussenstop 2.\n- Start bij tussenstop 2. Schuif 5 plaatsen op; Palestina wijst de weg. Loop vervolgens 1 plekje met de mensen mee. Dit is tussenstop 3.\n- Start bij tussenstop 3. Loop 7 plaatsen naar links van wereld richting de maan. Loop het maximum aantal mensen naar rechts. Dit is tussenstop 4.\n- Start bij tussenstop 4. Ga het aantal blokjes op het boomblaadje richting roze streepje horizontaal. Ga vervolgens het aantal letters van de afkorting in de richting van de groene pijl. Dit is tussenstop 5.\n\n" 
+      +"\n\nGeef met 5 letters antwoord op de grote vraag: Hoe eindigt jullie reis?",
       answer: "Samen",
-      hints: ["Het antwoord bestaat uit 5 karakters", "Het antwoord bestaat alleen uit letters"],
+      hints: ["Jullie hebben 5 tussenstops gemaakt en het antwoord bestaat uit 5 letters. Toevallig, hè?", "Misschien helpt het om jullie tussenstops een op een rijtje te zetten. Kijk eens of je er dan een woord uit kunt halen. Kijk vooral naar het begin van de woorden."],
     },
-    completeMessage: "Dit was het RSC (waar ANS zit) Op naar de volgende stop.",
+    completeMessage: "Dit was het RSC! Op naar de volgende stop.",
   },  
   {
     name: "LUX",
@@ -131,7 +141,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "p3n7",
-    arrivalMessage: "Welkom bij LUX! Hét filmhuis van Nijmegen.\n\nHoeveel films kennen jullie eigenlijk?",
+    arrivalMessage: " We love... The diaper smell of filmquiz!\n\n Aan deze filmquiz zit zeker een luchtje. Kunnen jullie raden welke films hier uitgebeeld worden?\n\n Klik op de foto om te vergroten.\n Kom je er echt niet uit, dan staat onder hints een lijst met films, waar de goede antwoorden tussen zitten.\n\n Disclaimer: No babies were harmed in the making of this quiz.",
     puzzle: {
       type: "photo-quiz",
       question: "Welke film zie je op elke foto?",
@@ -145,9 +155,9 @@ export const STOPS = [
         { url: `${import.meta.env.BASE_URL}filmquiz/7.jpg`, answer: "Madagascar" },
         { url: `${import.meta.env.BASE_URL}filmquiz/8.jpg`, answer: "Neverending Story" },
       ],
-      hints: ["hint 1", "hint 2"],
+      hints: ["Alladin, Beethoven, Bolt, Catnado, Chicago, Chronicles of Narnia, Creature from the black lagoon, Cube, E.T., Eurovision Song Contest: The story of Fire Saga, Frankenstein, Garfield, George of the jungle, Godzilla, How to train your dragon, Jaws, Jumanji, Jungle Book, Jurassic Park, Life of Pi, Lion King, Madagascar, Men in Black, Monster Inc, Okja, Predator, Psycho, Rango, Shrek, The Goonies, The Hulk, The Matrix, The Never Ending Story, The Shining, The Sound of Music, The Terminator, The Tigger movie, The Wizard of Ozz, They live, Turks Fruit"],
     },
-    completeMessage: "Dat was LUX!",
+    completeMessage: "Dat was LUX! Op naar de volgende stop.",
   },
   {
     name: "Hertogstraat",
@@ -156,21 +166,23 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
-    arrivalMessage: "Jullie zijn in de Hertogstraat, vlakbij het hart van Nijmegen. Een rustige straat met karakter.\n\nKijk eens goed om je heen.",
+    arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel dvd's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de Imker liet zien, daar moeten jullie nu zijn.\n\n In de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's zijn bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\n Tips:\n De hint geeft aan hoeveel foto's bewerkt zijn.\n Alleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\n Als je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\n Succes!",
     puzzle: {
       type: "photo-authentic",
-      question: "Welke foto's zijn origineel en welke zijn bewerkt?\n\nTik op een foto om hem te vergroten.",
+      question: "Welke foto's zijn origineel (goed/groen) en welke zijn bewerkt (fout/rood)?\n\nTik op een foto om hem te vergroten.",
       photos: [
         { url: `${import.meta.env.BASE_URL}hertogstraat/1.jpg`, authentic: true },
         { url: `${import.meta.env.BASE_URL}hertogstraat/2.jpg`, authentic: false },
-        { url: `${import.meta.env.BASE_URL}hertogstraat/1.jpg`, authentic: true },
+        { url: `${import.meta.env.BASE_URL}hertogstraat/1.jpg`, authentic: false },
         { url: `${import.meta.env.BASE_URL}hertogstraat/1.jpg`, authentic: true },
         { url: `${import.meta.env.BASE_URL}hertogstraat/2.jpg`, authentic: false },
+        { url: `${import.meta.env.BASE_URL}hertogstraat/2.jpg`, authentic: false },
+        { url: `${import.meta.env.BASE_URL}hertogstraat/2.jpg`, authentic: true },
         { url: `${import.meta.env.BASE_URL}hertogstraat/2.jpg`, authentic: false },
       ],
-      hints: ["TODO", "TODO"],
+      hints: ["Er zijn 5 foto's bewerkt."],
     },
-    completeMessage: "Dit was de Hertogstraat. Op naar de volgende stop.",
+    completeMessage: "Dat was de Hertogstraat! Op naar de volgende stop.",
   },
   {
     name: "Valkhof",
@@ -179,35 +191,35 @@ export const STOPS = [
     arrivalRadius: 30,
     showCat: true,
     cheatCode: "9mw5",
-    arrivalMessage: "Jullie staan op het Valkhof — een van de mooiste en oudste plekken van Nijmegen. Hier kruisen de Waal, de Romeinse geschiedenis en het heden elkaar.\n\nNeem even de tijd om te kijken. En lees.",
+    arrivalMessage: "Het valkhof is één van de mooiste en oudste plekken van Nijmegen, vol geschiedenis, natuur en natuurlijk de leukste plek tijdens de Feesten!.\n\n Maar hebben jullie wel eens goed rond gekeken? Lees zo eerst de vragen en loop vervolgens een rondje. Jullie hoeven niet het valkhof af en geen trappen naar beneden te nemen.",
     puzzle: {
       type: "multi",
-      question: "Beantwoord de vragen bij het Valkhof.",
+      question: "Beantwoord de vragen. Kijk bij de hint om te zien op welke plekken je moet zoeken.",
       questions: [
         {
-          question: "Wie keek knarsetandend toe, hoe wrekende Romeinse legers naderen?",
+          question: "Wie keek knarsetandend toe, hoe wrekende Romeinse legers naderden?",
           answers: ["claudius"],
         },
         {
-          question: "Welke kleur heeft de circusachtige tent van het podium van de Kaaij?",
-          answers: ["blauw wit", "wit blauw", "blauw en wit", "wit en blauw"],
+          question: "Welke kleur, naast wit, heeft de circusachtige tent van het podium van de Kaaij?",
+          answers: ["blauw"],
         },
         {
           question: "Zoek de plek waarvan de tekst vrij vertaald is: 'Weet ge mij een plaats te noemen, die op zooveel schoons kan roemen'? Geniet van het uitzicht van de Waal en vertel me: wat is Nijmegen?",
           answers: ["gastvrij"],
         },
         {
-          question: "TODO 1",
-          answers: ["1"],
+          question: "Op welke route vind je een brandende kaars?",
+          answers: ["Liberation route Europe"],
         },
         {
-          question: "TODO 2",
-          answers: ["2"],
+          question: "Zet de Nijmeegse geschiedenis op volgorde. Vul alleen de cijfers in: 1. Adelaar; 2. Leeuw; 3. Dubbelkoppige adelaar; 4. Drie leeuwen",
+          answers: ["1432"],
         },
       ],
       hints: ["Vraag 4: Antw 1", "Vraag 5: Antw 2"],
     },
-    completeMessage: "Dit was het Valkhof. Op naar de volgende stop.",
+    completeMessage: "Dat was het Valkhof! Op naar de volgende stop.",
   },
   {
     name: "Café de Burgemeester",
@@ -270,7 +282,7 @@ Veel succes!
       ],
       hints: ["hint 1", "hint 2"],
     },
-    completeMessage: "Dit was Café de Burgemeester. Op naar huis",
+    completeMessage: "Dat was Café de Burgemeester.\n\n Gefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\n Op naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
   },  
 
 ];
@@ -279,8 +291,8 @@ export const FINAL = {
   lat: 51.8376845,
   lng: 5.8325001,
   arrivalRadius: 5,
-  hints: ["Hint 1", "Hint 2"],
+  hints: ["De code ligt verborgen waar wijsheid en onzin komen en gaan."],
   title: "Jullie zijn er! 🥂",
   message:
-    "20 jaar geleden begon het mooiste avontuur van jullie leven. Bedankt dat jullie samen zo'n inspirerend stel zijn.\n\nGefeliciteerd met jullie jubileum!",
+    "Niet alleen het kistje ligt bij jullie thuis.\n De code ligt al die tijd verstopt voor jullie huis.\n Ergens verborgen in een geocache.\n Dus ga maar snel zoeken en veel succes!",
 };
