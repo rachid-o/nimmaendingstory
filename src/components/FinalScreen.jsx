@@ -1,129 +1,21 @@
-import { useEffect, useRef, useState } from "react";
-import { useGeolocation } from "../hooks/useGeolocation";
-import { useCompass } from "../hooks/useCompass";
-import { haversineDistance, calculateBearing, formatDistance } from "../utils/geo";
+import { useState } from "react";
 import { STOPS } from "../config/trail";
 import { randomCatUrl } from "../utils/catPhotos";
 
-function shortestPath(from, to) {
-  const diff = ((to - from + 180) % 360 + 360) % 360 - 180;
-  return from + diff;
-}
-
-export default function FinalScreen({ arrived, onArrived }) {
+export default function FinalScreen() {
   const stop = STOPS[STOPS.length - 1];
-  const { position, error: gpsError } = useGeolocation();
-  const { heading, permissionNeeded, requestPermission } = useCompass();
-  const prevRotationRef = useRef(null);
   const [catUrl] = useState(() => randomCatUrl());
-  const hints = stop.hints ?? [];
-  const [hintsShown, setHintsShown] = useState(0);
-  const [showHintOverlay, setShowHintOverlay] = useState(false);
-
-  const distance = position
-    ? haversineDistance(position.lat, position.lng, stop.lat, stop.lng)
-    : null;
-
-  const bearing = position
-    ? calculateBearing(position.lat, position.lng, stop.lat, stop.lng)
-    : null;
-
-  const rawRotation =
-    bearing !== null && heading !== null ? bearing - heading : bearing ?? 0;
-
-  const arrowRotation =
-    prevRotationRef.current === null
-      ? rawRotation
-      : shortestPath(prevRotationRef.current, rawRotation);
-  prevRotationRef.current = arrowRotation;
-
-  useEffect(() => {
-    if (!arrived && distance !== null && distance <= stop.arrivalRadius) {
-      onArrived();
-    }
-  }, [distance, arrived, onArrived]);
-
-  if (arrived) {
-    return (
-      <div className="screen final-arrived-screen">
-        <div className="fireworks">🎉</div>
-        <h1>{stop.name}</h1>
-        <div className="final-message">
-          {stop.arrivalMessage.split("\n").map((line, i) =>
-            line ? <p key={i}>{line}</p> : <br key={i} />
-          )}
-        </div>
-        <img src={catUrl} alt="Een lieve kat voor jullie" className="cat-reward" />
-      </div>
-    );
-  }
 
   return (
-    <div className="screen navigation-screen final-navigation">
-      <div className="stop-badge finale">Finale</div>
-      <h2>Jullie zijn er bijna!</h2>
-      <p className="subtitle">Volg het kompas naar de verrassing</p>
-
-      {permissionNeeded && (
-        <button className="btn-secondary" onClick={requestPermission}>
-          Activeer kompas
-        </button>
-      )}
-
-      <div className="compass-container">
-        <div
-          className="compass-arrow"
-          style={{ transform: `rotate(${arrowRotation}deg)` }}
-        >
-          <svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
-            <polygon points="50,5 15,145 50,115 85,145" fill="#d4a017" />
-          </svg>
-        </div>
-      </div>
-
-      <div className="distance-display">
-        {gpsError ? (
-          <p className="error-text">{gpsError}</p>
-        ) : distance !== null ? (
-          <>
-            <span className="distance-value">{formatDistance(distance)}</span>
-            <span className="distance-label">nog te gaan</span>
-          </>
-        ) : (
-          <p className="loading-text">GPS bepalen…</p>
+    <div className="screen final-arrived-screen">
+      <div className="fireworks">🎉</div>
+      <h1>{stop.name}</h1>
+      <div className="final-message">
+        {stop.arrivalMessage.split("\n").map((line, i) =>
+          line ? <p key={i}>{line}</p> : <br key={i} />
         )}
       </div>
-
-      {hints.length > 0 && (
-        <button className="btn-hint" onClick={() => { if (hintsShown === 0) setHintsShown(1); setShowHintOverlay(true); }}>
-          💡 {hintsShown === 0 ? "Hint tonen" : "Hints bekijken"}
-        </button>
-      )}
-
-      {showHintOverlay && (
-        <div className="confirm-overlay" onClick={() => setShowHintOverlay(false)}>
-          <div className="confirm-dialog hint-overlay-dialog" onClick={e => e.stopPropagation()}>
-            <p className="hint-overlay-title">💡 {hints.length > 1 ? "Hints" : "Hint"}</p>
-            <div className="hint-overlay-list">
-              {hints.slice(0, hintsShown).map((text, i) => (
-                <div className="hint-box" key={i}>
-                  {hints.length > 1 && <span className="hint-label">Hint {i + 1}</span>}
-                  <p>{text}</p>
-                </div>
-              ))}
-            </div>
-            {hintsShown < hints.length && (
-              <button className="btn-hint" onClick={() => setHintsShown(n => n + 1)}>
-                💡 Volgende hint
-              </button>
-            )}
-            <button className="btn-secondary" onClick={() => setShowHintOverlay(false)}>
-              Sluiten
-            </button>
-          </div>
-        </div>
-      )}
-
+      <img src={catUrl} alt="Een lieve kat voor jullie" className="cat-reward" />
     </div>
   );
 }

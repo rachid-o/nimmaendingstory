@@ -15,6 +15,9 @@ export default function NavigationScreen({ stopIndex, onArrived, debugMode }) {
   const { position, error: gpsError } = useGeolocation();
   const { heading, permissionNeeded, requestPermission, compassAvailable } = useCompass();
   const prevRotationRef = useRef(null);
+  const hints = stop.hints ?? [];
+  const [hintsShown, setHintsShown] = useState(0);
+  const [showHintOverlay, setShowHintOverlay] = useState(false);
   const [showCheat, setShowCheat] = useState(false);
   const [cheatInput, setCheatInput] = useState("");
   const [cheatError, setCheatError] = useState(false);
@@ -56,11 +59,11 @@ export default function NavigationScreen({ stopIndex, onArrived, debugMode }) {
 
   return (
     <div className="screen navigation-screen">
-      <div className="stop-badge">
-        Stop {stopIndex + 1} / {STOPS.length}
+      <div className={`stop-badge${stop.isFinal ? " finale" : ""}`}>
+        {stop.isFinal ? "Finale" : `Stop ${stopIndex + 1} / ${STOPS.length}`}
       </div>
 
-      <h2>Volg het kompas</h2>
+      <h2>{stop.isFinal ? "Jullie zijn er bijna!" : "Volg het kompas"}</h2>
 
       {permissionNeeded && (
         <button className="btn-secondary" onClick={requestPermission}>
@@ -102,9 +105,46 @@ export default function NavigationScreen({ stopIndex, onArrived, debugMode }) {
         </p>
       )}
 
-      <button className="cheat-btn" onClick={() => { setShowCheat(true); setCheatInput(""); setCheatError(false); }}>
-        noodcode
-      </button>
+      {hints.length > 0 && (
+        <button className="btn-hint" onClick={() => { if (hintsShown === 0) setHintsShown(1); setShowHintOverlay(true); }}>
+          💡 {hintsShown === 0 ? "Hint tonen" : "Hints bekijken"}
+        </button>
+      )}
+
+      {showHintOverlay && (
+        <div className="confirm-overlay" onClick={() => setShowHintOverlay(false)}>
+          <div className="confirm-dialog hint-overlay-dialog" onClick={e => e.stopPropagation()}>
+            <p className="hint-overlay-title">💡 {hints.length > 1 ? "Hints" : "Hint"}</p>
+            <div className="hint-overlay-list">
+              {hints.slice(0, hintsShown).map((hint, i) => {
+                const text = typeof hint === "string" ? hint : hint.text;
+                const image = typeof hint === "object" ? hint.image : null;
+                return (
+                  <div className="hint-box" key={i}>
+                    {hints.length > 1 && <span className="hint-label">Hint {i + 1}</span>}
+                    {text && <p>{text}</p>}
+                    {image && <img src={`${import.meta.env.BASE_URL}${image}`} alt="hint" className="hint-image" />}
+                  </div>
+                );
+              })}
+            </div>
+            {hintsShown < hints.length && (
+              <button className="btn-hint" onClick={() => setHintsShown(n => n + 1)}>
+                💡 Volgende hint
+              </button>
+            )}
+            <button className="btn-secondary" onClick={() => setShowHintOverlay(false)}>
+              Sluiten
+            </button>
+          </div>
+        </div>
+      )}
+
+      {!stop.isFinal && (
+        <button className="cheat-btn" onClick={() => { setShowCheat(true); setCheatInput(""); setCheatError(false); }}>
+          noodcode
+        </button>
+      )}
 
       {debugMode && (
         <div className="debug-badge">{stop.name} · aankomstradius: {stop.arrivalRadius} m</div>

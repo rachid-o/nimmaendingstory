@@ -20,7 +20,7 @@ export default function App() {
   const { progress, update } = useProgress();
   const [showTest, setShowTest] = useState(false);
   const [previewPuzzle, setPreviewPuzzle] = useState(null);
-  const { screen, currentStopIndex, finalArrived, debugMode } = progress;
+  const { screen, currentStopIndex, debugMode } = progress;
 
   const handlePinSuccess = useCallback((isDebug) => {
     update({ pinVerified: true, screen: "welcome", debugMode: !!isDebug });
@@ -31,8 +31,9 @@ export default function App() {
   }, [update]);
 
   const handleArrived = useCallback(() => {
-    update({ screen: "arrival" });
-  }, [update]);
+    const isFinal = STOPS[currentStopIndex]?.isFinal;
+    update({ screen: isFinal ? "final" : "arrival" });
+  }, [update, currentStopIndex]);
 
   const handleStartPuzzle = useCallback(() => {
     update({ screen: "puzzle" });
@@ -48,17 +49,10 @@ export default function App() {
 
   const handleNextStop = useCallback(() => {
     const nextIndex = currentStopIndex + 1;
-    const nextStop = STOPS[nextIndex];
-    if (!nextStop || nextStop.isFinal) {
-      update({ screen: "final" });
-    } else {
+    if (nextIndex < STOPS.length) {
       update({ currentStopIndex: nextIndex, screen: "navigate" });
     }
   }, [update, currentStopIndex]);
-
-  const handleFinalArrived = useCallback(() => {
-    update({ finalArrived: true });
-  }, [update]);
 
   useEffect(() => {
     const stopScreens = ["navigate", "arrival", "puzzle", "stopComplete"];
@@ -88,7 +82,7 @@ export default function App() {
   else if (screen === "stopComplete" && validStop)
     content = <StopCompleteScreen stopIndex={currentStopIndex} onNext={handleNextStop} />;
   else if (screen === "final")
-    content = <FinalScreen arrived={!!finalArrived} onArrived={handleFinalArrived} />;
+    content = <FinalScreen />;
 
   const mainContent = previewPuzzle ? (
     <PuzzleScreen
@@ -98,15 +92,10 @@ export default function App() {
     />
   ) : content;
 
-  const showSkip = debugMode && (screen === "navigate" || screen === "final");
+  const showSkip = debugMode && screen === "navigate";
 
   function handleTestSelectStop(index) {
     update({ currentStopIndex: index, screen: "navigate" });
-    setShowTest(false);
-  }
-
-  function handleTestSelectFinal() {
-    update({ screen: "final" });
     setShowTest(false);
   }
 
@@ -115,17 +104,13 @@ export default function App() {
       <RefreshButton />
       <ResetButton />
       {/* <TipsButton /> */}
-      {showSkip && screen === "navigate" && validStop && (
+      {showSkip && validStop && (
         <FwButton onFw={handleArrived} />
-      )}
-      {showSkip && screen === "final" && !finalArrived && (
-        <FwButton onFw={handleFinalArrived} />
       )}
       {debugMode && <TestButton onClick={() => setShowTest(true)} />}
       {showTest && (
         <TestScreen
           onSelectStop={handleTestSelectStop}
-          onSelectFinal={handleTestSelectFinal}
           onClose={() => setShowTest(false)}
           onPreviewPuzzle={(puzzle) => { setPreviewPuzzle(puzzle); setShowTest(false); }}
         />
@@ -137,15 +122,6 @@ export default function App() {
             <a
               className="debug-maps-link"
               href={`https://maps.google.com/?q=${STOPS[currentStopIndex].lat},${STOPS[currentStopIndex].lng}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              🗺 Google Maps
-            </a>
-          ) : screen === "final" ? (
-            <a
-              className="debug-maps-link"
-              href={`https://maps.google.com/?q=${STOPS[STOPS.length-1].lat},${STOPS[STOPS.length-1].lng}`}
               target="_blank"
               rel="noopener noreferrer"
             >
