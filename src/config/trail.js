@@ -89,11 +89,14 @@ export const STOPS = [
         },
         {
           question: "Welke beeldjes kwamen op bezoek?",
-          options: ["2 kleuters, 5 dwergen en een duif", "3 honden, een varken en 2 clowns", "6 dwergen, een Buddha en een schildpad", "Een olifant, 5 honden en een theepot", "4 dwergen, een aap en een koe ", "Een katje, 4 honden en een paard"],
+          options: ["2 kleuters, 5 dwergen en een duif", "3 honden, een varken en 2 clowns", "6 dwergen, een Buddha en een schildpad", "Een olifant, 3 honden en een theepot", "4 dwergen, een aap en een koe ", "Een katje, 4 honden en een paard"],
           answer: "E",
         },
       ],
-      hints: ["Dit is een variant op Mastermind. Belangrijk: de bolletjes geven alleen aan hoeveel antwoorden jullie goed hebben of op de verkeerde plek staan, maar ze geven niet aan om WELKE antwoorden het gaat. Tip als het te lastig is: vul eerst bij alle vragen antwoord A in. Kijk hoeveel er goed zijn. Doe vervolgens hetzelfde voor antwoord B, antwoord C, etc. Op die manier kun je achterhalen welke letters in het goede antwoord zitten."],
+      hints: [
+        "Dit is een variant op Mastermind. Belangrijk: de bolletjes geven alleen aan hoeveel antwoorden jullie goed hebben of op de verkeerde plek staan, maar ze geven niet aan om WELKE antwoorden het gaat. Tip als het te lastig is: vul eerst bij alle vragen antwoord A in. Kijk hoeveel er goed zijn. Doe vervolgens hetzelfde voor antwoord B, antwoord C, etc. Op die manier kun je achterhalen welke letters in het goede antwoord zitten.",
+        "Dubbele antwoorden mogen"
+      ],
     },
     completeMessage: "Dit was Café Hop en Heivuur. Goed gedaan: jullie zijn slimmer dan Hobbes met een cone om haar nek! Op naar de volgende stop.",
   }, 
