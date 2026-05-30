@@ -1,4 +1,4 @@
-import { STOPS, FINAL } from "../config/trail";
+import { STOPS } from "../config/trail";
 
 const TEST_PUZZLES = [];
 
@@ -22,7 +22,7 @@ export default function TestScreen({ onSelectStop, onSelectFinal, onClose, onPre
             <button className="test-stop-btn test-stop-final" onClick={onSelectFinal}>
               <span className="test-stop-num">🏁</span>
               <span className="test-stop-name">Eindlocatie</span>
-              <span className="test-stop-radius">{FINAL.arrivalRadius} m</span>
+              <span className="test-stop-radius">{STOPS[STOPS.length-1].arrivalRadius} m</span>
             </button>
           </li>
         </ul>

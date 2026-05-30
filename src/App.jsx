@@ -13,7 +13,7 @@ import ResetButton from "./components/ResetButton";
 import FwButton from "./components/FwButton";
 import TestButton from "./components/TestButton";
 import TestScreen from "./components/TestScreen";
-import { STOPS, FINAL } from "./config/trail";
+import { STOPS } from "./config/trail";
 
 export default function App() {
   useWakeLock();
@@ -48,7 +48,8 @@ export default function App() {
 
   const handleNextStop = useCallback(() => {
     const nextIndex = currentStopIndex + 1;
-    if (nextIndex >= STOPS.length) {
+    const nextStop = STOPS[nextIndex];
+    if (!nextStop || nextStop.isFinal) {
       update({ screen: "final" });
     } else {
       update({ currentStopIndex: nextIndex, screen: "navigate" });
@@ -144,7 +145,7 @@ export default function App() {
           ) : screen === "final" ? (
             <a
               className="debug-maps-link"
-              href={`https://maps.google.com/?q=${FINAL.lat},${FINAL.lng}`}
+              href={`https://maps.google.com/?q=${STOPS[STOPS.length-1].lat},${STOPS[STOPS.length-1].lng}`}
               target="_blank"
               rel="noopener noreferrer"
             >

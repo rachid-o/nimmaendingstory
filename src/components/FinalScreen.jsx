@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useCompass } from "../hooks/useCompass";
 import { haversineDistance, calculateBearing, formatDistance } from "../utils/geo";
-import { FINAL } from "../config/trail";
+import { STOPS } from "../config/trail";
 import { randomCatUrl } from "../utils/catPhotos";
 
 function shortestPath(from, to) {
@@ -11,20 +11,21 @@ function shortestPath(from, to) {
 }
 
 export default function FinalScreen({ arrived, onArrived }) {
+  const stop = STOPS[STOPS.length - 1];
   const { position, error: gpsError } = useGeolocation();
   const { heading, permissionNeeded, requestPermission } = useCompass();
   const prevRotationRef = useRef(null);
   const [catUrl] = useState(() => randomCatUrl());
-  const hints = FINAL.hints ?? [];
+  const hints = stop.hints ?? [];
   const [hintsShown, setHintsShown] = useState(0);
   const [showHintOverlay, setShowHintOverlay] = useState(false);
 
   const distance = position
-    ? haversineDistance(position.lat, position.lng, FINAL.lat, FINAL.lng)
+    ? haversineDistance(position.lat, position.lng, stop.lat, stop.lng)
     : null;
 
   const bearing = position
-    ? calculateBearing(position.lat, position.lng, FINAL.lat, FINAL.lng)
+    ? calculateBearing(position.lat, position.lng, stop.lat, stop.lng)
     : null;
 
   const rawRotation =
@@ -37,7 +38,7 @@ export default function FinalScreen({ arrived, onArrived }) {
   prevRotationRef.current = arrowRotation;
 
   useEffect(() => {
-    if (!arrived && distance !== null && distance <= FINAL.arrivalRadius) {
+    if (!arrived && distance !== null && distance <= stop.arrivalRadius) {
       onArrived();
     }
   }, [distance, arrived, onArrived]);
@@ -46,9 +47,9 @@ export default function FinalScreen({ arrived, onArrived }) {
     return (
       <div className="screen final-arrived-screen">
         <div className="fireworks">🎉</div>
-        <h1>{FINAL.title}</h1>
+        <h1>{stop.name}</h1>
         <div className="final-message">
-          {FINAL.message.split("\n").map((line, i) =>
+          {stop.arrivalMessage.split("\n").map((line, i) =>
             line ? <p key={i}>{line}</p> : <br key={i} />
           )}
         </div>

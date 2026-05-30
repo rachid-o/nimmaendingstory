@@ -283,16 +283,16 @@ Veel succes!
       // hints: ["hint 1", "hint 2"],
     },
     completeMessage: "Dat was Café de Burgemeester.\n\nGefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\nOp naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
-  },  
+  },
+  {
+    name: "Jullie zijn er!",
+    lat: 51.8376845,
+    lng: 5.8325001,
+    arrivalRadius: 5,
+    hints: ["De code ligt verborgen waar wijsheid en onzin komen en gaan."],
+    arrivalMessage: "Niet alleen het kistje ligt bij jullie thuis.\nDe code ligt al die tijd verstopt voor jullie huis.\nErgens verborgen in een geocache.\nDus ga maar snel zoeken en veel succes!",
+    showCat: true,
+    isFinal: true,
+  },
 
 ];
-
-export const FINAL = {
-  lat: 51.8376845,
-  lng: 5.8325001,
-  arrivalRadius: 5,
-  hints: ["De code ligt verborgen waar wijsheid en onzin komen en gaan."],
-  title: "Jullie zijn er!",
-  message:
-    "Niet alleen het kistje ligt bij jullie thuis.\nDe code ligt al die tijd verstopt voor jullie huis.\nErgens verborgen in een geocache.\nDus ga maar snel zoeken en veel succes!",
-};

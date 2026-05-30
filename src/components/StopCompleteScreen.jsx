@@ -3,7 +3,7 @@ import { catUrlForStop } from "../utils/catPhotos";
 
 export default function StopCompleteScreen({ stopIndex, onNext }) {
   const stop = STOPS[stopIndex];
-  const isLastStop = stopIndex === STOPS.length - 1;
+  const isLastStop = STOPS[stopIndex + 1]?.isFinal ?? stopIndex === STOPS.length - 1;
   const catUrl = stop.showCat ? catUrlForStop(stopIndex) : null;
 
   return (
