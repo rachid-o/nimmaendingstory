@@ -76,6 +76,7 @@ export default function App() {
       <PuzzleScreen
         stopIndex={currentStopIndex}
         onSolved={handleSolved}
+        debugMode={debugMode}
       />
     );
   else if (screen === "stopComplete" && validStop)

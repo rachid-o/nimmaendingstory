@@ -40,7 +40,7 @@ export default defineConfig({
       workbox: {
         navigateFallback: 'index.html',
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,woff2}'],
-        globIgnores: ['filmquiz/**', 'tijdvliegt/**'],
+        globIgnores: ['filmquiz/**', 'tijdvliegt/**', 'cats/**', 'hertogstraat/**'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
@@ -48,6 +48,14 @@ export default defineConfig({
             options: {
               cacheName: 'google-fonts',
               expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
+            },
+          },
+          {
+            urlPattern: /\/(cats|hertogstraat)\//,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-large',
+              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 90 },
             },
           },
         ],

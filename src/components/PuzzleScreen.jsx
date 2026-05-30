@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { STOPS } from "../config/trail";
+import FwButton from "./FwButton";
 import MastermindPuzzle from "./puzzles/MastermindPuzzle";
 import MultiQuestionPuzzle from "./puzzles/MultiQuestionPuzzle";
 import PhotoAnswerPuzzle from "./puzzles/PhotoAnswerPuzzle";
@@ -10,7 +11,7 @@ import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
 import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
 
 
-export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose }) {
+export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose, debugMode }) {
   const isPreview = !!overridePuzzle;
   const puzzle = overridePuzzle ?? STOPS[stopIndex].puzzle;
   const hints = puzzle.hints ?? (puzzle.hint ? [puzzle.hint] : []);
@@ -45,6 +46,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
 
   return (
     <div className="screen puzzle-screen">
+      {debugMode && !isPreview && <FwButton onFw={onSolved} />}
       {isPreview ? (
         <button className="btn-secondary puzzle-preview-close" type="button" onClick={onClose}>
           × Sluiten
