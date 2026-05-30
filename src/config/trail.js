@@ -62,7 +62,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
-    arrivalMessage: "Beste backwards talking roze dwergzebra's,\n\nHet ergens op de wereld klokslag 20:00, dus we gaan beginnen met de Porseleinen Pubquiz. En zoals gewoonlijk wordt het weer vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
+    arrivalMessage: "Beste backwards talking roze dwergzebra's,\n\nHet is ergens op de wereld klokslag 20:00, dus we gaan beginnen met de Porseleinen Pubquiz. En zoals gewoonlijk wordt het weer vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
       question: "Jullie mogen zo vaak raden als je wilt. De categoriën zijn: 1. Cultuur, 2. Geschiedenis, 3. Wetenschap, 4. Muziek en 5. Thuis. Succes!",

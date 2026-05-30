@@ -11,7 +11,7 @@ import PhotoQuizPuzzle from "./puzzles/PhotoQuizPuzzle";
 import MultiChoicePuzzle from "./puzzles/MultiChoicePuzzle";
 
 
-export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose, debugMode }) {
+export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onClose, onBack, debugMode }) {
   const isPreview = !!overridePuzzle;
   const puzzle = overridePuzzle ?? STOPS[stopIndex].puzzle;
   const hints = puzzle.hints ?? (puzzle.hint ? [puzzle.hint] : []);
@@ -52,8 +52,13 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
           × Sluiten
         </button>
       ) : (
-        <div className="stop-badge">
-          Stop {stopIndex + 1} / {STOPS.length}
+        <div className="puzzle-top-bar">
+          <button className="btn-secondary btn-back-arrival" type="button" onClick={onBack}>
+            ← Terug
+          </button>
+          <div className="stop-badge">
+            Stop {stopIndex + 1} / {STOPS.length}
+          </div>
         </div>
       )}
 

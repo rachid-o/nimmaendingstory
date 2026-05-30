@@ -295,6 +295,17 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 
 /* ── Puzzle screen ──────────────────────────────────────────── */
 .puzzle-screen { justify-content: space-evenly; padding-top: clamp(16px, 4vh, 32px); }
+.puzzle-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 90%;
+}
+.btn-back-arrival {
+  font-size: 0.85rem;
+  padding: 5px 12px;
+}
 
 .puzzle-box {
   background: var(--bg-card);

@@ -22,7 +22,8 @@ export default function ResetButton() {
       {confirming && (
         <div className="confirm-overlay" onClick={() => setConfirming(false)}>
           <div className="confirm-dialog" onClick={(e) => e.stopPropagation()}>
-            <p>Alle voortgang wissen en opnieuw beginnen?</p>
+            <p>Alle voortgang wissen en helemaal opnieuw beginnen.</p>
+            <p>Weet je dit heel erg zeker?</p>
             <div className="confirm-actions">
               <button className="btn-secondary" onClick={() => setConfirming(false)}>
                 Annuleren

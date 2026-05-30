@@ -38,6 +38,10 @@ export default function App() {
     update({ screen: "puzzle" });
   }, [update]);
 
+  const handleBackToArrival = useCallback(() => {
+    update({ screen: "arrival" });
+  }, [update]);
+
   const handleSolved = useCallback(() => {
     update({ screen: "stopComplete" });
   }, [update]);
@@ -76,6 +80,7 @@ export default function App() {
       <PuzzleScreen
         stopIndex={currentStopIndex}
         onSolved={handleSolved}
+        onBack={handleBackToArrival}
         debugMode={debugMode}
       />
     );
