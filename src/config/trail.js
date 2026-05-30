@@ -166,7 +166,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
-    arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel dvd's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de imker liet zien, daar moeten jullie nu zijn.\n\nIn de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's is bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAlleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\nAls je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\nSucces!",
+    arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel DVD's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de imker liet zien, daar moeten jullie nu zijn.\n\nIn de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's is bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAlleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\nAls je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\nSucces!",
     puzzle: {
       type: "photo-authentic",
       question: "Welke foto's zijn origineel en welke zijn bewerkt?\n\nTik op een foto om hem te vergroten.",
@@ -236,7 +236,7 @@ Vast niet, want door alle drank zijn jullie bijna alles vergeten...
 
 Een paar dingen weten jullie nog wel:
 - Jullie gingen drie dagen na elkaar uit.
-- Elke dag deden jullie een drankje in een cafe en vervolgens een activiteit op een andere locatie
+- Elke dag deden jullie een drankje in een cafe en vervolgens een activiteit op een andere locatie.
 - Het drankje, het cafe en de activiteit op locatie waren elke dag anders.
 
 Maar dit is nog niet genoeg om de alles te kunnen reconstrueren.
