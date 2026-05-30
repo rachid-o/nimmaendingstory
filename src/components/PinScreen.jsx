@@ -7,14 +7,17 @@ export default function PinScreen({ onSuccess }) {
 
   function handleDigit(d) {
     const next = input + d;
-    if (next.length < DEBUG_PIN.length) {
+    const maxLen = Math.max(PIN.length, DEBUG_PIN.length);
+    if (next.length < maxLen) {
       setInput(next);
       if (next.length === PIN.length && next === PIN) {
         onSuccess(false);
       }
-    } else if (next.length === DEBUG_PIN.length) {
+    } else if (next.length === maxLen) {
       if (next === DEBUG_PIN) {
         onSuccess(true);
+      } else if (next === PIN) {
+        onSuccess(false);
       } else {
         setShake(true);
         setTimeout(() => {
