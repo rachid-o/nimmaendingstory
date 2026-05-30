@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { STOPS } from "../config/trail";
-import { randomCatUrl } from "../utils/catPhotos";
 
 export default function FinalScreen() {
   const stop = STOPS[STOPS.length - 1];
   const hints = stop.hints ?? [];
-  const [catUrl] = useState(() => randomCatUrl());
   const [hintsShown, setHintsShown] = useState(0);
   const [showHintOverlay, setShowHintOverlay] = useState(false);
 
@@ -16,7 +14,6 @@ export default function FinalScreen() {
 
   return (
     <div className="screen final-arrived-screen">
-      <div className="fireworks">🎉</div>
       <h1>{stop.name}</h1>
       <div className="final-message">
         {stop.arrivalMessage.split("\n").map((line, i) =>
@@ -59,7 +56,6 @@ export default function FinalScreen() {
         </div>
       )}
 
-      <img src={catUrl} alt="Een lieve kat voor jullie" className="cat-reward" />
     </div>
   );
 }
