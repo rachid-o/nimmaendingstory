@@ -169,7 +169,7 @@ export const STOPS = [
     arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel dvd's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de Imker liet zien, daar moeten jullie nu zijn.\n\nIn de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's is bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAlleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\nAls je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\nSucces!",
     puzzle: {
       type: "photo-authentic",
-      question: "Welke foto's zijn origineel (goed/groen) en welke zijn bewerkt (fout/rood)?\n\nTik op een foto om hem te vergroten.",
+      question: "Welke foto's zijn origineel en welke zijn bewerkt?\n\nTik op een foto om hem te vergroten.",
       photos: [
         { url: `${import.meta.env.BASE_URL}hertogstraat/1.jpg`, authentic: true },
         { url: `${import.meta.env.BASE_URL}hertogstraat/2.jpg`, authentic: false },
