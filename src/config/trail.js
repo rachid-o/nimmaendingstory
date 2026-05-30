@@ -30,7 +30,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "r2e9",
-    arrivalMessage: "De tijd vliegt!\n\n Deze Vos verliest noch zn haren, noch zn streken. En ook Anouk ziet er niet 20 jaar ouder uit. Dat kan de eerste opdracht wel eens wat lastiger maken...\n\n"
+    arrivalMessage: "De tijd vliegt!\n\nDeze Vos verliest noch zn haren, noch zn streken. En ook Anouk ziet er niet 20 jaar ouder uit. Dat kan de eerste opdracht wel eens wat lastiger maken...\n\n"
       + "Zet de foto's in de juiste volgorde. Begin met de oudste foto en eindig met de meest recente.\n"
       + "Je krijgt te zien hoeveel antwoorden je goed hebt.\n"
       + "Klik op de foto om te vergroten.Klik nog een keer om het weer te verkleinen.\n\n"
@@ -53,7 +53,7 @@ export const STOPS = [
       answer: "GECAFHBD",
       hints: ["2x Weekendje weg; Carnaval Escharen; Verjaardag Anouk; Efteling; Vrijgezellenweekend; Kunstnacht; Maffiafeest"],
     },
-    completeMessage: "Dit was de Tijgerstraat! \n\n Op juiste volgorde: Maffiafeest (2006), Carnaval Escharen (2008), Efteling (2009), Kunstnacht (2014), Weekendje (2019), Verjaardag Anouk (2020), Vrijgezellenweekendje (2021), Weekendje (2025).\n\n Hierbij een heel oude foto van Henk en Hobbes als beloning.\n Op naar de volgende stop.",
+    completeMessage: "Dit was de Tijgerstraat! \n\nOp juiste volgorde: Maffiafeest (2006), Carnaval Escharen (2008), Efteling (2009), Kunstnacht (2014), Weekendje (2019), Verjaardag Anouk (2020), Vrijgezellenweekendje (2021), Weekendje (2025).\n\nHierbij een heel oude foto van Henk en Hobbes als beloning.\nOp naar de volgende stop.",
   },
   {
     name: "Café Hop en Heivuur",
@@ -62,7 +62,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "c5h6",
-    arrivalMessage: "Beste backwards talking roze dwergzebra's,\n\n Het ergens op de wereld klokslag 20:00, dus we gaan beginnen met de Porseleinen Pubquiz. En zoals gewoonlijk wordt het weer vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen./n/n Meedoen is leuker dan vastzitten, dus veel succes!",
+    arrivalMessage: "Beste backwards talking roze dwergzebra's,\n\nHet ergens op de wereld klokslag 20:00, dus we gaan beginnen met de Porseleinen Pubquiz. En zoals gewoonlijk wordt het weer vreselijk spannend! Want om door te gaan naar de volgende stop, moeten jullie alle vragen goed beantwoorden. Dat kan nog wel eens tegenvallen. Maar wees gerust: hoe vaker jullie verkeerd antwoorden, hoe meer informatie jullie krijgen.\n\nMeedoen is leuker dan vastzitten, dus veel succes!",
     puzzle: {
       type: "multi-choice",
       question: "Jullie mogen zo vaak raden als je wilt. De categoriën zijn: 1. Cultuur, 2. Geschiedenis, 3. Wetenschap, 4. Muziek en 5. Thuis. Succes!",
@@ -124,7 +124,7 @@ export const STOPS = [
     arrivalRadius: 20,
     showCat: true,
     cheatCode: "b9x4",
-    arrivalMessage: "Reis je rot!\n\n Van USA tot India, van Luxemburg tot Japan. Van veilig in een vliegtuig, bus en trein tot ongelukjes in huurauto's: jullie reizen flink wat af.\n\n Jullie reis begon bij ANS, maar hoe gaan jullie eindigen?\n\n Opdracht: \n- Jullie gaan zo meteen een reis maken door van plek naar plek te lopen. \n- Alleen verenigingen/organisatie tellen als locatie/plek/plaats. \n- Tussendoor maken jullie 5 tussenstops. \n- Volg de routebeschrijving om de juiste locaties te vinden. \n- Jullie starten bij ANS. \n\nDit zijn de reislocaties van rechts naar links: \nANS, Dance fever, MSV, AIESEC, ESN, SOFV, RAGweek, NSSR, Akku, United Netherlands, FNV, VOX. \nVoorbeeld: vanuit FNV 1 plek naar links is naar Vox. ",
+    arrivalMessage: "Reis je rot!\n\nVan USA tot India, van Luxemburg tot Japan. Van veilig in een vliegtuig, bus en trein tot ongelukjes in huurauto's: jullie reizen flink wat af.\n\nJullie reis begon bij ANS, maar hoe gaan jullie eindigen?\n\nOpdracht: \n- Jullie gaan zo meteen een reis maken door van plek naar plek te lopen. \n- Alleen verenigingen/organisatie tellen als locatie/plek/plaats. \n- Tussendoor maken jullie 5 tussenstops. \n- Volg de routebeschrijving om de juiste locaties te vinden. \n- Jullie starten bij ANS. \n\nDit zijn de reislocaties van rechts naar links: \nANS, Dance fever, MSV, AIESEC, ESN, SOFV, RAGweek, NSSR, Akku, United Netherlands, FNV, VOX. \nVoorbeeld: vanuit FNV 1 plek naar links is naar Vox. ",
     puzzle: {
       type: "text",
       question: "Routebeschrijving:\n- Start bij ANS. Ga op bezoek bij de man die zijn schoen mist. Loop vervolgens 1 locatie met hem mee. Dit is tussenstop 1.\n- Start bij tussenstop 1. Hoeveel G's zitten er in de volledige naam? Loop dat aantal verenigingen naar rechts. Is het logo blauw? Ga dan 4 verenigingen naar links. Is het groen, ga dan 7 verenigingen naar links. Dit is tussenstop 2.\n- Start bij tussenstop 2. Schuif 5 plaatsen op; Palestina wijst de weg. Loop vervolgens 1 plekje met de mensen mee. Dit is tussenstop 3.\n- Start bij tussenstop 3. Loop 7 plaatsen naar links van wereld richting de maan. Loop het maximum aantal mensen naar rechts. Dit is tussenstop 4.\n- Start bij tussenstop 4. Ga het aantal blokjes op het boomblaadje richting roze streepje horizontaal. Ga vervolgens het aantal letters van de afkorting in de richting van de groene pijl. Dit is tussenstop 5.\n\n" 
@@ -141,7 +141,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "p3n7",
-    arrivalMessage: " We love... The diaper smell of filmquiz!\n\n Aan deze filmquiz zit zeker een luchtje. Kunnen jullie raden welke films hier uitgebeeld worden?\n\n Klik op de foto om te vergroten.\n Kom je er echt niet uit, dan staat onder hints een lijst met films, waar de goede antwoorden tussen zitten.\n\n Disclaimer: No babies were harmed in the making of this quiz.",
+    arrivalMessage: " We love... The diaper smell of filmquiz!\n\nAan deze filmquiz zit zeker een luchtje. Kunnen jullie raden welke films hier uitgebeeld worden?\n\nKlik op de foto om te vergroten.\nKom je er echt niet uit, dan staat onder hints een lijst met films, waar de goede antwoorden tussen zitten.\n\nDisclaimer: No babies were harmed in the making of this quiz.",
     puzzle: {
       type: "photo-quiz",
       question: "Welke film zie je op elke foto?",
@@ -166,7 +166,7 @@ export const STOPS = [
     arrivalRadius: 10,
     showCat: true,
     cheatCode: "6fq2",
-    arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel dvd's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de Imker liet zien, daar moeten jullie nu zijn.\n\n In de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's zijn bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\n Tips:\n De hint geeft aan hoeveel foto's bewerkt zijn.\n Alleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\n Als je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\n Succes!",
+    arrivalMessage: "Jullie eerste plekje samen, waarvan niemand snapt dat er zoveel dvd's in pasten. Wel perfect om Vierdaagse te vieren! Lopers aanmoedigen, concerten bekijken, karaoke in de ballenbak en een graffiti tour. En die steegjes die de Imker liet zien, daar moeten jullie nu zijn.\n\nIn de twee steegjes in de buurt zijn 8 foto's gemaakt. Een deel van die foto's zijn bewerkt. Zoek de plek op waar de foto is gemaakt en geef per foto aan of die bewerkt (fout) of origineel (goed) is.\n\nTips:\nDe hint geeft aan hoeveel foto's bewerkt zijn.\nAlleen permanente zaken zijn bewerkt, dus die fiets die er niet staat, telt niet mee.\nAls je een fout ziet, dan is het gelijk duidelijk. Twijfel je, dan is het waarschijnlijk een speling van het licht. \n\nSucces!",
     puzzle: {
       type: "photo-authentic",
       question: "Welke foto's zijn origineel (goed/groen) en welke zijn bewerkt (fout/rood)?\n\nTik op een foto om hem te vergroten.",
@@ -191,33 +191,33 @@ export const STOPS = [
     arrivalRadius: 30,
     showCat: true,
     cheatCode: "9mw5",
-    arrivalMessage: "Het valkhof is één van de mooiste en oudste plekken van Nijmegen, vol geschiedenis, natuur en natuurlijk de leukste plek tijdens de Feesten!.\n\n Maar hebben jullie wel eens goed rond gekeken? Lees zo eerst de vragen en loop vervolgens een rondje. Jullie hoeven niet het valkhof af en geen trappen naar beneden te nemen.",
+    arrivalMessage: "Het valkhof is één van de mooiste en oudste plekken van Nijmegen, vol geschiedenis, natuur en natuurlijk de leukste plek tijdens de Feesten!.\n\nMaar hebben jullie wel eens goed rond gekeken? Lees zo eerst de vragen en loop vervolgens een rondje. Jullie hoeven niet het valkhof af en geen trappen naar beneden te nemen.",
     puzzle: {
       type: "multi",
       question: "Beantwoord de vragen. Kijk bij de hint om te zien op welke plekken je moet zoeken.",
       questions: [
         {
-          question: "Wie keek knarsetandend toe, hoe wrekende Romeinse legers naderden?",
-          answers: ["claudius"],
-        },
-        {
           question: "Welke kleur, naast wit, heeft de circusachtige tent van het podium van de Kaaij?",
           answers: ["blauw"],
         },
         {
-          question: "Zoek de plek waarvan de tekst vrij vertaald is: 'Weet ge mij een plaats te noemen, die op zooveel schoons kan roemen'? Geniet van het uitzicht van de Waal en vertel me: wat is Nijmegen?",
-          answers: ["gastvrij"],
+          question: "Wie keek knarsetandend toe, hoe wrekende Romeinse legers naderden?",
+          answers: ["claudius"],
+        },
+        {
+          question: "Zet de Nijmeegse geschiedenis op volgorde. Vul alleen de cijfers in: 1. Adelaar; 2. Leeuw; 3. Dubbelkoppige adelaar; 4. Drie leeuwen",
+          answers: ["1432"],
         },
         {
           question: "Op welke route vind je een brandende kaars?",
           answers: ["Liberation route Europe"],
         },
         {
-          question: "Zet de Nijmeegse geschiedenis op volgorde. Vul alleen de cijfers in: 1. Adelaar; 2. Leeuw; 3. Dubbelkoppige adelaar; 4. Drie leeuwen",
-          answers: ["1432"],
+          question: "Zoek de plek waarvan de tekst vrij vertaald is: 'Weet ge mij een plaats te noemen, die op zooveel schoons kan roemen'? Geniet van het uitzicht van de Waal en vertel me: wat is Nijmegen?",
+          answers: ["gastvrij"],
         },
       ],
-      hints: ["Vraag 4: Antw 1", "Vraag 5: Antw 2"],
+      // hints: ["TODO: plaatje", "Vraag 5: Antw 2"],
     },
     completeMessage: "Dat was het Valkhof! Op naar de volgende stop.",
   },
@@ -282,7 +282,7 @@ Veel succes!
       ],
       hints: ["hint 1", "hint 2"],
     },
-    completeMessage: "Dat was Café de Burgemeester.\n\n Gefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\n Op naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
+    completeMessage: "Dat was Café de Burgemeester.\n\nGefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\nOp naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
   },  
 
 ];
@@ -294,5 +294,5 @@ export const FINAL = {
   hints: ["De code ligt verborgen waar wijsheid en onzin komen en gaan."],
   title: "Jullie zijn er! 🥂",
   message:
-    "Niet alleen het kistje ligt bij jullie thuis.\n De code ligt al die tijd verstopt voor jullie huis.\n Ergens verborgen in een geocache.\n Dus ga maar snel zoeken en veel succes!",
+    "Niet alleen het kistje ligt bij jullie thuis.\nDe code ligt al die tijd verstopt voor jullie huis.\nErgens verborgen in een geocache.\nDus ga maar snel zoeken en veel succes!",
 };
