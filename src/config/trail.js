@@ -89,7 +89,7 @@ export const STOPS = [
         },
         {
           question: "Welke beeldjes kwamen op bezoek?",
-          options: ["2 kleuters, 4 dwergen en een duif", "3 honden, een varken en 2 clowns", "6 dwergen, een Buddha en een schildpad", "Een olifant, 5 honden en een theepot", "5 dwergen, een aap en een koe ", "Een katje, 4 honden en een paard"],
+          options: ["2 kleuters, 5 dwergen en een duif", "3 honden, een varken en 2 clowns", "6 dwergen, een Buddha en een schildpad", "Een olifant, 5 honden en een theepot", "4 dwergen, een aap en een koe ", "Een katje, 4 honden en een paard"],
           answer: "E",
         },
       ],
@@ -285,7 +285,7 @@ Veel succes!
     completeMessage: "Dat was Café de Burgemeester.\n\nGefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\nOp naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
   },
   {
-    name: "Jullie zijn er!",
+    name: "Eindlocatie",
     lat: 51.8376845,
     lng: 5.8325001,
     arrivalRadius: 5,
