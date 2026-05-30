@@ -256,7 +256,7 @@ Veel succes!
     `,
     puzzle: {
       type: "logic-grid",
-      question: "Gebruik ✓ (groen) voor een match, ✗ (rood) om iets uit te sluiten.",
+      question: "Gebruik ✓ (groen) voor een match (1x klikken), ✗ (rood) om iets uit te sluiten (2x klikken).",
       clues: [
         "Anouk dronk geen wijn, toen ze zich afvroeg wie J.W. Tilleman was.",
         "Ruud stak ook z'n tong uit, maar zingen deed ie een andere keer.",
@@ -280,7 +280,7 @@ Veel succes!
         [[true,false,false],[false,true,false],[false,false,true]],
         [[false,false,true],[true,false,false],[false,true,false]],
       ],
-      hints: ["hint 1", "hint 2"],
+      // hints: ["hint 1", "hint 2"],
     },
     completeMessage: "Dat was Café de Burgemeester.\n\nGefeliciteerd! jullie hebben de laatste opdracht ontgrendeld.\nOp naar huis, waar het kistje op jullie wacht en jullie de allerlaatste aanwijzing krijgen.",
   },  
@@ -292,7 +292,7 @@ export const FINAL = {
   lng: 5.8325001,
   arrivalRadius: 5,
   hints: ["De code ligt verborgen waar wijsheid en onzin komen en gaan."],
-  title: "Jullie zijn er! 🥂",
+  title: "Jullie zijn er!",
   message:
     "Niet alleen het kistje ligt bij jullie thuis.\nDe code ligt al die tijd verstopt voor jullie huis.\nErgens verborgen in een geocache.\nDus ga maar snel zoeken en veel succes!",
 };
