@@ -35,11 +35,10 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
     e.preventDefault();
     const trimmed = input.trim().toLowerCase();
     if (trimmed === puzzle.answer.toLowerCase()) {
-      setFeedback(null);
+      setFeedback("correct");
       setPuzzleDone(true);
     } else {
       setFeedback("wrong");
-      setInput("");
       setTimeout(() => setFeedback(null), 1500);
     }
   }
@@ -121,7 +120,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
         <>
           <form className="answer-form" onSubmit={handleSubmit}>
             <input
-              className={`answer-input ${feedback === "wrong" ? "input-wrong" : ""}`}
+              className={`answer-input ${feedback === "wrong" ? "input-wrong" : feedback === "correct" ? "input-correct" : ""}`}
               type="text"
               value={input}
               onChange={e => setInput(e.target.value)}
@@ -129,6 +128,7 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
               autoComplete="off"
               autoCorrect="off"
               spellCheck="false"
+              readOnly={puzzleDone}
             />
             {!puzzleDone && (
               <button className="btn-primary" type="submit" disabled={!input.trim()}>
@@ -136,6 +136,9 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
               </button>
             )}
           </form>
+          {feedback === "correct" && (
+            <p className="correct-feedback">Dat is goed!</p>
+          )}
           {feedback === "wrong" && (
             <p className="wrong-feedback">Helaas, dat is niet goed. Probeer het nog eens!</p>
           )}

@@ -409,6 +409,12 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   font-size: 1rem;
   max-width: 90%;
 }
+.correct-feedback {
+  color: #4caf50;
+  font-size: 1rem;
+  max-width: 90%;
+  font-weight: 600;
+}
 
 /* ── Arrival screen ─────────────────────────────────────────── */
 .arrival-screen { justify-content: center; gap: clamp(16px, 4vh, 28px); }
