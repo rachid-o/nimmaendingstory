@@ -36,9 +36,12 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
 
   function handleClear() {
     if (solved) return;
+    const lastFilled = guess.map((v, i) => (v !== null ? i : -1)).filter(i => i !== -1).pop();
+    if (lastFilled === undefined) return;
     const next = [...guess];
-    next[activeSlot] = null;
+    next[lastFilled] = null;
     setGuess(next);
+    setActiveSlot(lastFilled);
   }
 
   function handleSubmit() {
@@ -100,7 +103,7 @@ export default function PhotoOrderPuzzle({ puzzle, onSolved }) {
               type="button"
               className="btn-secondary mm-clear-btn"
               onClick={handleClear}
-              disabled={guess[activeSlot] === null}
+              disabled={guess.every(v => v === null)}
             >
               ⌫ Wissen
             </button>
