@@ -5,7 +5,7 @@
 export const DEBUG_MODE = false;
 
 export const PIN = "2006";
-export const DEBUG_PIN = "12369874";
+export const DEBUG_PIN = "9000";
 
 export const WELCOME = {
   title: "The Nimma Ending Story!",
