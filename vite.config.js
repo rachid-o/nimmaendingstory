@@ -20,7 +20,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       base,
-      includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg'],
+      includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg', 'hertogstraat/*.jpg', 'filmquiz/*.jpg', 'tijdvliegt/*.jpg'],
       manifest: {
         name: 'Nimma Ending Story',
         short_name: 'Nimma Ending Story',
@@ -40,7 +40,7 @@ export default defineConfig({
       workbox: {
         navigateFallback: 'index.html',
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,woff2}'],
-        globIgnores: ['filmquiz/**', 'tijdvliegt/**', 'cats/**', 'hertogstraat/**'],
+        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.(googleapis|gstatic)\.com\/.*/i,
@@ -48,14 +48,6 @@ export default defineConfig({
             options: {
               cacheName: 'google-fonts',
               expiration: { maxEntries: 10, maxAgeSeconds: 60 * 60 * 24 * 365 },
-            },
-          },
-          {
-            urlPattern: /\/(cats|hertogstraat)\//,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'images-large',
-              expiration: { maxEntries: 30, maxAgeSeconds: 60 * 60 * 24 * 90 },
             },
           },
         ],
