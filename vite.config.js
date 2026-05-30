@@ -20,7 +20,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       base,
-      includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg', 'hertogstraat/*.jpg', 'filmquiz/*.jpg', 'tijdvliegt/*.jpg'],
+      includeAssets: ['favicon.svg', 'icons/*.png', 'photo.jpg', 'cats/*.jpg', 'hertogstraat/*.jpg', 'filmquiz/*.jpg', 'tijdvliegt/*.jpg', 'valkhof/*.jpg'],
       manifest: {
         name: 'Nimma Ending Story',
         short_name: 'Nimma Ending Story',

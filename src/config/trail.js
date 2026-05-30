@@ -217,7 +217,7 @@ export const STOPS = [
           answers: ["gastvrij"],
         },
       ],
-      // hints: ["TODO: plaatje", "Vraag 5: Antw 2"],
+      hints: [{ image: "valkhof/hint1.jpg" }],
     },
     completeMessage: "Dat was het Valkhof! Op naar de volgende stop.",
   },

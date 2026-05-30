@@ -352,6 +352,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
   margin-bottom: 4px;
 }
 .hint-box p { font-size: 1rem; color: var(--text-dim); }
+.hint-image { width: 100%; border-radius: 8px; margin-top: 0.5rem; }
 
 .answer-form {
   display: flex;

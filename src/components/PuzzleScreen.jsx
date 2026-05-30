@@ -72,12 +72,17 @@ export default function PuzzleScreen({ stopIndex, onSolved, overridePuzzle, onCl
           <div className="confirm-dialog hint-overlay-dialog" onClick={e => e.stopPropagation()}>
             <p className="hint-overlay-title">💡 {hints.length > 1 ? "Hints" : "Hint"}</p>
             <div className="hint-overlay-list">
-              {hints.slice(0, hintsShown).map((text, i) => (
-                <div className="hint-box" key={i}>
-                  {hints.length > 1 && <span className="hint-label">Hint {i + 1}</span>}
-                  <p>{text}</p>
-                </div>
-              ))}
+              {hints.slice(0, hintsShown).map((hint, i) => {
+                const text = typeof hint === "string" ? hint : hint.text;
+                const image = typeof hint === "object" ? hint.image : null;
+                return (
+                  <div className="hint-box" key={i}>
+                    {hints.length > 1 && <span className="hint-label">Hint {i + 1}</span>}
+                    {text && <p>{text}</p>}
+                    {image && <img src={`${import.meta.env.BASE_URL}${image}`} alt="hint" className="hint-image" />}
+                  </div>
+                );
+              })}
             </div>
             {hintsShown < hints.length && (
               <button className="btn-hint" onClick={() => setHintsShown(n => n + 1)}>
