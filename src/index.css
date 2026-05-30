@@ -134,9 +134,9 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 }
 
 /* ── PIN screen ─────────────────────────────────────────────── */
-.pin-header .compass-icon { font-size: 5rem; margin-bottom: 6px; }
-.pin-header h1 { font-size: 2.4rem; }
-.pin-header p  { color: var(--text-dim); margin-top: 4px; font-size: 1.2rem; }
+.pin-header .compass-icon { font-size: 3.5rem; margin-bottom: 4px; }
+.pin-header h1 { font-size: 1.8rem; }
+.pin-header p  { color: var(--text-dim); margin-top: 4px; font-size: 1rem; }
 
 .pin-dots {
   display: flex;
@@ -161,17 +161,17 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 
 .pin-pad {
   display: grid;
-  grid-template-columns: repeat(3, min(27vw, 110px));
-  gap: clamp(12px, 3.5vw, 20px);
+  grid-template-columns: repeat(3, min(23vw, 90px));
+  gap: clamp(10px, 3vw, 16px);
 }
 .pin-btn {
-  width: min(27vw, 110px);
-  height: min(27vw, 110px);
+  width: min(23vw, 90px);
+  height: min(23vw, 90px);
   border-radius: 50%;
   background: var(--bg-card);
   border: 1.5px solid var(--gold-dim);
   color: var(--text);
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: 'Lato', sans-serif;
   cursor: pointer;
   transition: background 0.15s;
@@ -181,7 +181,7 @@ p { line-height: 1.6; color: var(--text); font-size: 1.15rem; }
 }
 .pin-btn:hover  { background: rgba(212,160,23,0.15); }
 .pin-btn:active { background: rgba(212,160,23,0.3); }
-.delete-btn { font-size: 1.5rem; color: var(--gold); }
+.delete-btn { font-size: 1.3rem; color: var(--gold); }
 
 .install-hint {
   border-top: 1px solid rgba(212,160,23,0.2);
